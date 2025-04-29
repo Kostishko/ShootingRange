@@ -1,0 +1,121 @@
+.menuPanel {
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    background-color: rgba(193, 202, 119, 0.72);
+    height: 75%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 90%;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-top-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    border-left-color: rgba(180, 155, 84, 0.79);
+    border-right-color: rgba(180, 155, 84, 0.79);
+    border-top-color: rgba(180, 155, 84, 0.79);
+    border-bottom-color: rgba(180, 155, 84, 0.79);
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.menuButton {
+    width: 51%;
+    height: 16%;
+    padding-bottom: 0;
+    margin-bottom: 5%;
+    background-color: rgb(123, 161, 71);
+    border-top-left-radius: 49px;
+    border-top-right-radius: 49px;
+    border-bottom-right-radius: 49px;
+    border-bottom-left-radius: 49px;
+    border-top-width: 0;
+    border-right-width: 14px;
+    border-bottom-width: 14px;
+    border-left-width: 0;
+    border-left-color: rgb(183, 137, 137);
+    border-right-color: rgb(183, 137, 137);
+    border-top-color: rgb(183, 137, 137);
+    border-bottom-color: rgb(183, 137, 137);
+    font-size: 50px;
+    -unity-font-style: bold;
+    color: rgb(64, 42, 137);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(247, 255, 0);
+    text-shadow: 2px 2px 0 rgb(108, 103, 103);
+}
+
+.hiddenPanel {
+    left: -100%;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+    display: none;
+}
+
+.MenuSlider {
+    width: 763px;
+    margin-top: 52px;
+    margin-right: 52px;
+    margin-bottom: 52px;
+    margin-left: 52px;
+    font-size: 43px;
+    color: rgb(153, 32, 192);
+}
+
+.menuTitleLabel {
+    position: absolute;
+    top: 2%;
+    font-size: 80px;
+    -unity-text-outline-color: rgb(229, 228, 72);
+    color: rgb(153, 32, 192);
+    -unity-font-style: bold;
+    text-shadow: 2px 2px 0 rgb(128, 120, 120);
+    -unity-text-outline-width: 1px;
+}
+
+.recordItem {
+    flex-basis: 25%;
+}
+
+.recordLabel {
+    margin-right: 8%;
+    padding-top: 10px;
+    flex-grow: 0;
+    flex-basis: 10%;
+    font-size: 24px;
+    color: rgb(99, 60, 195);
+    -unity-font-style: bold;
+}
+
+.timerLabel {
+    font-size: 71px;
+    color: rgb(82, 29, 94);
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+}
+
+.weaponOverlayPanel {
+    background-color: rgba(125, 125, 125, 0.35);
+    -unity-slice-left: 0;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 20px;
+}

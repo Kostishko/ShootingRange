@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet" />
+    <ui:VisualElement name="Canvas" style="flex-grow: 1; align-items: center; justify-content: center; flex-shrink: 0; flex-direction: column; margin-top: 4%; margin-right: 4%; margin-bottom: 4%; margin-left: 4%; display: none;">
+        <ui:VisualElement name="MainMenuPanel" class="menuPanel" style="flex-grow: 1; opacity: 1; display: none;">
+            <ui:Button text="On the Range!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGameButton" class="menuButton" />
+            <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="menuButton" />
+            <ui:Button text="Records" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsButton" class="menuButton" />
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="menuButton" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Setting" class="menuPanel" style="flex-grow: 1; visibility: visible; overflow: hidden; display: none;">
+            <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" />
+            <ui:Slider label="Sound" high-value="100" name="SoundSlider" class="MenuSlider" />
+            <ui:Slider label="Music" high-value="100" name="MusicSlider" class="MenuSlider" />
+            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="menuButton" style="margin-bottom: 0; margin-top: 120px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Records" class="menuPanel" style="flex-grow: 1; display: none; justify-content: flex-start;">
+            <ui:Label tabindex="-1" text="Records" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" />
+            <ui:ListView name="ListView" style="width: 694px; margin-top: 148px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 60%;" />
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" class="menuButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GameplayOverlay" style="flex-grow: 1; display: flex;">
+        <ui:VisualElement name="RoundOnLayoutPanel" style="flex-grow: 1; align-items: center; visibility: visible; display: flex;">
+            <ui:Label tabindex="-1" text="00:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Timer" class="timerLabel" style="left: 0; top: 10%; visibility: visible;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ConstantLayoutPanel" style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="LeftConstantPanel" style="flex-grow: 0; width: 50%;">
+                <ui:VisualElement name="WeaponLayoutPanel" style="flex-grow: 0; width: 75%; height: 40%; top: 60%; flex-direction: row;">
+                    <ui:VisualElement name="Weapon1_Panel" class="weaponOverlayPanel" style="flex-grow: 1;" />
+                    <ui:VisualElement name="Weapon2_Panel" class="weaponOverlayPanel" style="flex-grow: 1;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="RightConstantPanel" style="flex-grow: 0; width: 50%; flex-direction: row-reverse; align-items: auto;">
+                <ui:VisualElement name="WeaponLayoutPanel" style="flex-grow: 0; width: 35%; height: 40%; top: 0; flex-direction: row-reverse;">
+                    <ui:VisualElement name="Weapon2_Panel" class="weaponOverlayPanel" style="flex-grow: 1; margin-right: 0; -unity-text-align: upper-left; justify-content: center; align-items: center;">
+                        <ui:Label tabindex="-1" text="00/00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponAmmo" class="timerLabel" style="-unity-text-align: upper-right;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
