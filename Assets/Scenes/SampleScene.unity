@@ -4488,6 +4488,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6281424698479989189, guid: 3fa6fbb56ca0e844cb205c077c803256, type: 3}
+--- !u!4 &1847143337 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4392509392189086903, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
+  m_PrefabInstance: {fileID: 8079196009178654040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1865696284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5415730321244809576, guid: 4bf6b302691d91d4aa7a4ce42d42a585, type: 3}
@@ -5921,7 +5926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 149312969310904421, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.42
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 149312969310904421, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5958,6 +5963,14 @@ PrefabInstance:
     - target: {fileID: 7742470745049681749, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639981769733526175, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1847143337}
+    - target: {fileID: 8639981769733526175, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
+      propertyPath: mouseSensitivity
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
