@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 149312969310904421}
   - component: {fileID: 8639981769733526175}
   - component: {fileID: 7424737385290535920}
+  - component: {fileID: 380055548777914594}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -277,6 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d6cddf02a6b034ba911ed0b59fca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  mouseSensitivity: 1000
+  cameraTransform: {fileID: 0}
 --- !u!143 &7424737385290535920
 CharacterController:
   m_ObjectHideFlags: 0
@@ -303,6 +307,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &380055548777914594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742470745049681749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b74ffb3f8d49d4f8718c8532178924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6606185803256309489}
+  detectRayRange: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &9110138169927471467
 GameObject:
   m_ObjectHideFlags: 0

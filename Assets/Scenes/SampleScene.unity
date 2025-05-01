@@ -1173,18 +1173,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7d8f810c943368e438b8d876d35b22b7, type: 3}
   m_PrefabInstance: {fileID: 649087174}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &357558334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357558332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c871256c2d14f42b1a2c07ca075762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &357558335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1206,7 +1194,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5000005, y: 1.0000001, z: 1.3000004}
   m_Center: {x: -0.000000447035, y: 0.49999976, z: -0.000000804663}
---- !u!114 &357558336
+--- !u!114 &357558339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1218,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfb0e4730e204b40922f4c96fc70d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameInteractable: 
+  promtMessage: Weapon Chest
 --- !u!4 &359859710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7879892570716506082, guid: 6b3b3c2669201b04e98d4c78fc3cb275, type: 3}
@@ -1903,10 +1891,7 @@ PrefabInstance:
       addedObject: {fileID: 357558335}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d8f810c943368e438b8d876d35b22b7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 357558334}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d8f810c943368e438b8d876d35b22b7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 357558336}
+      addedObject: {fileID: 357558339}
   m_SourcePrefab: {fileID: 100100000, guid: 7d8f810c943368e438b8d876d35b22b7, type: 3}
 --- !u!1001 &649271191
 PrefabInstance:
@@ -2778,6 +2763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1264391242}
+  characterInteraction: {fileID: 1912033884}
 --- !u!114 &1195555138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4753,6 +4739,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43033cf2a9439114e938410bea3547e3, type: 3}
+--- !u!114 &1912033884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 380055548777914594, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
+  m_PrefabInstance: {fileID: 8079196009178654040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b74ffb3f8d49d4f8718c8532178924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1918821819 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6706175976618796858, guid: d190a6f967ac59748b467e5271541ca0, type: 3}
@@ -6039,6 +6036,10 @@ PrefabInstance:
     - target: {fileID: 149312969310904421, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 380055548777914594, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
+      propertyPath: mask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7742470745049681749, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: m_Name

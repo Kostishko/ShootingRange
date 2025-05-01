@@ -9,14 +9,14 @@ using UnityEngine;
 public abstract class interactable_sc : MonoBehaviour
 {
 
-    public string NameInteractable;
+    public string promtMessage;
 
     public void BaseInteract()
     {
         Interact();
     }
 
-    public virtual void Interact()
+    protected virtual void Interact()
     {
         
     }    

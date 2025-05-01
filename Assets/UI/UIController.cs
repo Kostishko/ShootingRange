@@ -31,6 +31,13 @@ public class UIController : MonoBehaviour
     //inventary elements
     public VisualElement inventaryRoot;
 
+    //promted elements
+    public VisualElement promptMessage;
+    public Label promtLabel;
+
+    //Character
+    public characterInteraction_sc characterInteraction;
+
 
     // Start is called before the first frame update
     void OnEnable()
@@ -77,6 +84,10 @@ public class UIController : MonoBehaviour
         overlayRoot = root.Q("GameplayOverlay");
         overlayRoot.style.display = DisplayStyle.None;
         //inventaryRoot = root.Q("InventaryRoot");
+
+        //prompt
+        promptMessage = root.Q("PromtBox");
+        promtLabel = promptMessage.Q<Label>("PromtLabel");
     }
 
     public void Update()
@@ -98,6 +109,22 @@ public class UIController : MonoBehaviour
         {
            Application.Quit();
         }
+
+        if(characterInteraction.isInteracting)
+        {
+            promptMessage.style.visibility = Visibility.Visible;
+            promtLabel.text = characterInteraction.detectHit.collider.GetComponent<interactable_sc>().promtMessage;
+            Vector3 screenPos = characterInteraction.cam.WorldToScreenPoint(characterInteraction.detectHit.collider.transform.position);
+            promptMessage.style.left = screenPos.x + promptMessage.layout.width/2;
+            promptMessage.style.top = Screen.height - screenPos.y - 100;
+        }
+        else
+        {
+            promptMessage.style.visibility = Visibility.Hidden;
+        }
+
+
+
     }
 
 

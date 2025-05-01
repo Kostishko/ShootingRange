@@ -1,5 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet" />
+    <ui:VisualElement name="PromtBox" style="flex-grow: 1; position: absolute; flex-basis: auto; width: 25%; height: 10%; flex-direction: row; display: flex; visibility: hidden; top: 26px; left: 20px;">
+        <ui:VisualElement name="PromtPicture" style="flex-grow: 0; flex-shrink: 0; flex-basis: 25%; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;);" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PromtLabel" style="-unity-text-align: middle-left; font-size: 26px;" />
+    </ui:VisualElement>
     <ui:VisualElement name="Canvas" style="flex-grow: 1; align-items: center; justify-content: center; flex-shrink: 0; flex-direction: column; margin-top: 4%; margin-right: 4%; margin-bottom: 4%; margin-left: 4%; display: flex;">
         <ui:VisualElement name="MainMenuPanel" class="menuPanel" style="flex-grow: 1; opacity: 1; display: none;">
             <ui:Button text="On the Range!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGameButton" class="menuButton" />

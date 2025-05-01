@@ -13,20 +13,14 @@ public class character_sc : MonoBehaviour
 
     public Transform cameraTransform; // Assign the camera in the Inspector
 
-    //raycast
-    // Perform a raycast from the camera's position forward
-    private Ray detectRay;
-    RaycastHit detectHit;
-    public float detectRayRange; // Range for detecting items
-    public LayerMask mask; // Layer mask for raycast filtering
+ 
 
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();        
 
-        //raycast initialise
-        detectRay = new Ray(cameraTransform.position, cameraTransform.forward);
+       
     }
 
     void Update()
@@ -54,18 +48,7 @@ public class character_sc : MonoBehaviour
             verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f); // Limit vertical rotation
             cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
-            //ray update
-            detectRay.origin = cameraTransform.position;
-            detectRay.direction = cameraTransform.forward;
-            if (Physics.Raycast(detectRay, out detectHit, detectRayRange, mask))
-            {
-                if(detectHit.collider.GetComponent<interactable_sc>()!=null)
-                {
-                   
-
-                }
-
-            }
+         
         }
         
     }
