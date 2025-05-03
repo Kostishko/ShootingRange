@@ -1,7 +1,7 @@
 .menuPanel {
     align-items: center;
     justify-content: center;
-    background-color: rgba(193, 202, 119, 0.72);
+    background-color: rgb(101, 164, 115);
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: 90%;
@@ -9,10 +9,10 @@
     border-top-right-radius: 10%;
     border-bottom-right-radius: 10%;
     border-bottom-left-radius: 10%;
-    border-top-width: 8px;
-    border-right-width: 8px;
-    border-bottom-width: 8px;
-    border-left-width: 8px;
+    border-top-width: 0;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 0;
     border-left-color: rgba(180, 155, 84, 0.79);
     border-right-color: rgba(180, 155, 84, 0.79);
     border-top-color: rgba(180, 155, 84, 0.79);
@@ -33,7 +33,7 @@
     height: 16%;
     padding-bottom: 0;
     margin-bottom: 2%;
-    background-color: rgb(123, 161, 71);
+    background-color: rgb(98, 130, 168);
     border-top-left-radius: 49px;
     border-top-right-radius: 49px;
     border-bottom-right-radius: 49px;
@@ -46,10 +46,10 @@
     border-right-color: rgb(183, 137, 137);
     border-top-color: rgb(183, 137, 137);
     border-bottom-color: rgb(183, 137, 137);
-    font-size: 50px;
+    font-size: 77px;
     -unity-font-style: bold;
     color: rgb(64, 42, 137);
-    -unity-text-outline-width: 1px;
+    -unity-text-outline-width: 0;
     -unity-text-outline-color: rgb(247, 255, 0);
     text-shadow: 2px 2px 0 rgb(108, 103, 103);
 }
@@ -110,36 +110,29 @@
 }
 
 .shownPanel {
-    position: relative;
-    left: 0;
-    flex-grow: 1;
-    flex-basis: 0;
-    transition-duration: 0.5s;
-    transition-delay: 0.2s;
 }
 
 .hiddenLeft {
-    position: absolute;
-    left: -100%;
-    top: 10%;
-    transition-duration: 0.5s;
-    transition-delay: 0.2s;
+    opacity: 0;
+    translate: -120% 0;
 }
 
 .hiddenTop {
-    position: absolute;
-    left: 10%;
-    top: -100%;
-    transition-duration: 0.5s;
-    transition-delay: 0.2s;
+    translate: 0 -127%;
+    opacity: 0;
 }
 
 .hiddenRight {
-    position: absolute;
-    left: 120%;
-    bottom: 0;
-    right: 0;
-    top: 10%;
-    transition-duration: 0.5s;
-    transition-delay: 0.2s;
+    translate: 120% 0;
+    opacity: 0;
+}
+
+Button.menuButton:hover {
+    background-color: rgb(114, 160, 214);
+    color: rgb(82, 53, 178);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    transition-duration: 0.05s;
 }

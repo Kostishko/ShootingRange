@@ -23,9 +23,11 @@ public class UIController : MonoBehaviour
 
     //settings menu
     public VisualElement SettingsPanel;
+    public Button SettingsBackButton;
 
     //records menu
     public VisualElement RecordsPanel;
+    public Button RecordsBackButton;
 
     //overlay elements
     public VisualElement overlayRoot;
@@ -94,9 +96,26 @@ public class UIController : MonoBehaviour
             Application.Quit();
         };
 
-        SettingsPanel = root.Q("Setting");        
+        SettingsPanel = root.Q("Setting");
+        SettingsBackButton = root.Q<Button>("SettingsBackButton");
+        SettingsBackButton.clicked += () =>
+        {
+            SettingsPanel.AddToClassList("hiddenTop");
+            //SettingsPanel.RemoveFromClassList("shownPanel");
+            MainMenuPanel.RemoveFromClassList("hiddenLeft");
+            //MainMenuPanel.AddToClassList("shownPanel");
+        };
+
         RecordsPanel = root.Q("Records");
-        
+        RecordsBackButton = root.Q<Button>("RecordsBackButton");
+        RecordsBackButton.clicked += () =>
+        {
+            RecordsPanel.AddToClassList("hiddenRight");
+            //RecordsPanel.RemoveFromClassList("shownPanel");
+            MainMenuPanel.RemoveFromClassList("hiddenLeft");
+            //MainMenuPanel.AddToClassList("shownPanel");
+        };
+
 
         //overlay elements initialisation
         overlayRoot = root.Q("GameplayOverlay");
@@ -117,9 +136,7 @@ public class UIController : MonoBehaviour
                 gameManager_sc.currentGameState == gameManager_sc.GameState.Inventary)
             {
                 gameManager.SetGameState(gameManager_sc.GameState.MainMenu);
-                overlayRoot.style.display = DisplayStyle.None;
-                menuRoot.style.display = DisplayStyle.Flex;
-                MainMenuPanel.style.display = DisplayStyle.Flex;
+                MainMenuPanel.RemoveFromClassList("hiddenLeft");
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
             }            
         }
