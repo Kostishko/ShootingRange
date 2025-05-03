@@ -27,19 +27,19 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Canvas" style="flex-grow: 1; padding-top: 5%; padding-right: 15%; padding-left: 15%; padding-bottom: 5%; flex-direction: column; align-items: center;">
-        <ui:VisualElement name="MainMenuPanel" class="menuPanel hiddenLeft" style="position: absolute;">
+        <ui:VisualElement name="MainMenuPanel" class="menuPanel hiddenLeft" style="position: absolute; transition-delay: 0s;">
             <ui:Button text="On the Range!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGameButton" class="menuButton" />
             <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="menuButton" />
             <ui:Button text="Records" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsButton" class="menuButton" />
             <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="menuButton" />
         </ui:VisualElement>
-        <ui:VisualElement name="Setting" class="menuPanel hiddenTop" style="position: absolute;">
+        <ui:VisualElement name="Setting" class="menuPanel hiddenTop" style="position: absolute; transition-delay: 0s;">
             <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" />
             <ui:Slider label="Sound" high-value="100" name="SoundSlider" class="MenuSlider" />
             <ui:Slider label="Music" high-value="100" name="MusicSlider" class="MenuSlider" />
             <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBackButton" class="menuButton" style="margin-bottom: 0; margin-top: 120px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="Records" class="menuPanel hiddenRight" style="position: absolute;">
+        <ui:VisualElement name="Records" class="menuPanel hiddenRight" style="position: absolute; transition-delay: 0s;">
             <ui:Label tabindex="-1" text="Records" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" />
             <ui:ListView name="ListView" style="width: 694px; margin-top: 148px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 60%;" />
             <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsBackButton" class="menuButton" />
