@@ -16,7 +16,7 @@ public abstract class interactable_sc : MonoBehaviour
         Interact();
     }
 
-    protected virtual void Interact()
+    public virtual void Interact()
     {
         
     }    

@@ -40,4 +40,7 @@ public class gameManager_sc : MonoBehaviour
 
 
 
+
+
+
 }

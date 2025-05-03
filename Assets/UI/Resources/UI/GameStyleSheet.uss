@@ -1,9 +1,7 @@
 .menuPanel {
     align-items: center;
     justify-content: center;
-    width: 65%;
     background-color: rgba(193, 202, 119, 0.72);
-    height: 75%;
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: 90%;
@@ -24,19 +22,17 @@
     padding-bottom: 0;
     padding-left: 0;
     margin-bottom: 0;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     transition-duration: 0.5s;
     transition-delay: 0.2s;
+    width: 80%;
+    height: 80%;
 }
 
 .menuButton {
     width: 51%;
     height: 16%;
     padding-bottom: 0;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     background-color: rgb(123, 161, 71);
     border-top-left-radius: 49px;
     border-top-right-radius: 49px;
@@ -56,13 +52,6 @@
     -unity-text-outline-width: 1px;
     -unity-text-outline-color: rgb(247, 255, 0);
     text-shadow: 2px 2px 0 rgb(108, 103, 103);
-}
-
-.hiddenPanel {
-    left: -100%;
-    transition-duration: 0.5s;
-    transition-delay: 0.2s;
-    display: none;
 }
 
 .MenuSlider {
@@ -118,4 +107,39 @@
     padding-bottom: 0;
     margin-left: 0;
     margin-right: 20px;
+}
+
+.shownPanel {
+    position: relative;
+    left: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.hiddenLeft {
+    position: absolute;
+    left: -100%;
+    top: 10%;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.hiddenTop {
+    position: absolute;
+    left: 10%;
+    top: -100%;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.hiddenRight {
+    position: absolute;
+    left: 120%;
+    bottom: 0;
+    right: 0;
+    top: 10%;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
 }

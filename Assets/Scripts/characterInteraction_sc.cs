@@ -36,7 +36,12 @@ public class characterInteraction_sc : MonoBehaviour
             if (detectHit.collider.GetComponent<interactable_sc>() != null)
             {
                 isInteracting = true;
-                Debug.Log("Hit: " + detectHit.collider.GetComponent<interactable_sc>().promtMessage);
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    //Debug.Log("Hit: " + detectHit.collider.GetComponent<interactable_sc>().promtMessage);
+                    detectHit.collider.GetComponent<interactable_sc>().Interact();
+                }
+                //Debug.Log("Hit: " + detectHit.collider.GetComponent<interactable_sc>().promtMessage);
             }
 
         }

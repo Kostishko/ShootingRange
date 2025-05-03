@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
 
     //major root element
     public VisualElement root;
+    
 
     //menu elements
     //main Menu
@@ -18,6 +19,7 @@ public class UIController : MonoBehaviour
     public Button NewGameButton;
     public Button RecordsButton;
     public Button SettingsButton;
+    public Button ExitButton;
 
     //settings menu
     public VisualElement SettingsPanel;
@@ -47,6 +49,8 @@ public class UIController : MonoBehaviour
         //menu elements initialisation
         menuRoot = root.Q("Canvas");
         menuRoot.style.display = DisplayStyle.Flex;
+                
+
 
         //main menu
         MainMenuPanel = root.Q("MainMenuPanel");
@@ -54,31 +58,45 @@ public class UIController : MonoBehaviour
         NewGameButton = root.Q<Button>("NewGameButton");
         RecordsButton = root.Q<Button>("RecordsButton");
         SettingsButton = root.Q<Button>("SettingsButton");
+        ExitButton = root.Q<Button>("ExitButton");
+        MainMenuPanel.RemoveFromClassList("hiddenLeft");
+        //MainMenuPanel.AddToClassList("shownPanel");
 
         NewGameButton.clicked += () =>
         {
             gameManager.SetGameState(gameManager_sc.GameState.Gameplay);
-            menuRoot.style.display = DisplayStyle.None;
-            overlayRoot.style.display = DisplayStyle.Flex;
+            MainMenuPanel.AddToClassList("hiddenLeft");            
+            //MainMenuPanel.RemoveFromClassList("shownPanel");
+           // overlayRoot.style.display = DisplayStyle.Flex;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         };
 
         RecordsButton.clicked += () =>
         {
-            MainMenuPanel.style.display = DisplayStyle.None;
-            RecordsPanel.style.display = DisplayStyle.Flex;
+            MainMenuPanel.AddToClassList("hiddenLeft");
+            //MainMenuPanel.RemoveFromClassList("shownPanel");
+            RecordsPanel.RemoveFromClassList("hiddenRight");
+            //RecordsPanel.AddToClassList("shownPanel");
+
         };
 
         SettingsButton.clicked += () =>
         {
-            MainMenuPanel.style.display = DisplayStyle.None;
-            SettingsPanel.style.display = DisplayStyle.Flex;
+            MainMenuPanel.AddToClassList("hiddenLeft");
+            //MainMenuPanel.RemoveFromClassList("shownPanel");
+            SettingsPanel.RemoveFromClassList("hiddenTop");
+            //SettingsPanel.AddToClassList("shownPanel");
+
         };
 
-        SettingsPanel = root.Q("Setting");
-        SettingsPanel.style.display = DisplayStyle.None;
+        ExitButton.clickable.clicked += () =>
+        {
+            Application.Quit();
+        };
+
+        SettingsPanel = root.Q("Setting");        
         RecordsPanel = root.Q("Records");
-        RecordsPanel.style.display = DisplayStyle.None;
+        
 
         //overlay elements initialisation
         overlayRoot = root.Q("GameplayOverlay");
@@ -110,6 +128,8 @@ public class UIController : MonoBehaviour
            Application.Quit();
         }
 
+
+        //promt message logic
         if(characterInteraction.isInteracting)
         {
             promptMessage.style.visibility = Visibility.Visible;
@@ -123,9 +143,22 @@ public class UIController : MonoBehaviour
             promptMessage.style.visibility = Visibility.Hidden;
         }
 
+    }
 
+    public void Awake()
+    {
+        // Set the initial game state to MainMenu
+        gameManager.SetGameState(gameManager_sc.GameState.MainMenu);
+    }
+
+    public void OpenInventoryPanel()
+    {
 
     }
 
+    public void CloseInventoryPanel()
+    {
+
+    }
 
 }
