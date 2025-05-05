@@ -13,9 +13,6 @@ public class character_sc : MonoBehaviour
 
     public Transform cameraTransform; // Assign the camera in the Inspector
 
- 
-
-
     void Start()
     {
         characterController = GetComponent<CharacterController>();        
