@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class weaponController_sc : MonoBehaviour
 {
-    public weapon_sc[] weapons = new weapon_sc[2]; // Array to hold two weapons
-    private int currentWeaponIndex = 0; // Index of the currently equipped weapon
+    public weapon_sc[] weapons = new weapon_sc[4]; // Array to hold two weapons
+    public int currentWeaponIndex = 0; // Index of the currently equipped weapon
 
     public Transform weaponHolder; // Transform of the character's weapon holder (e.g., hand or weapon slot)
 
@@ -39,18 +39,18 @@ public class weaponController_sc : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll > 0f)
         {
-            EquipWeapon((currentWeaponIndex + 1) % weapons.Length);
+            EquipWeapon((currentWeaponIndex + 1) % 2);
         }
         else if (scroll < 0f)
         {
-            EquipWeapon((currentWeaponIndex - 1 + weapons.Length) % weapons.Length);
+            EquipWeapon((currentWeaponIndex - 1 + 2) % 2);
         }
     }
 
     // Handles attacking with the current weapon
     private void HandleAttack()
     {
-        if (Input.GetMouseButton(0)) // Left mouse button
+        if (Input.GetButtonDown("Fire1")) // Left mouse button
         {
             if (weapons[currentWeaponIndex] != null)
             {

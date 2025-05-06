@@ -2,9 +2,9 @@
     <Style src="project://database/Assets/UI/Resources/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet" />
     <ui:VisualElement name="PromtBox" style="flex-grow: 1; position: absolute; flex-basis: auto; width: 25%; height: 10%; flex-direction: row; display: flex; visibility: hidden; top: 26px; left: 20px;">
         <ui:VisualElement name="PromtPicture" style="flex-grow: 0; flex-shrink: 0; flex-basis: 25%; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;); flex-direction: column; -unity-text-align: upper-left; align-items: center; justify-content: center;">
-            <ui:Label tabindex="-1" text="E" parse-escape-sequences="true" display-tooltip-when-elided="true" style="left: 3px;" />
+            <ui:Label tabindex="-1" text="E" parse-escape-sequences="true" display-tooltip-when-elided="true" style="left: 3px; font-size: 40px;" />
         </ui:VisualElement>
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PromtLabel" style="-unity-text-align: middle-left; font-size: 26px;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PromtLabel" style="-unity-text-align: middle-left; font-size: 49px;" />
     </ui:VisualElement>
     <ui:VisualElement name="GameplayOverlay" style="flex-grow: 1; display: flex; position: absolute; width: 100%; height: 100%;">
         <ui:VisualElement name="RoundOnLayoutPanel" style="flex-grow: 1; align-items: center; visibility: visible; display: flex;">
@@ -25,6 +25,9 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; position: absolute; width: 100%; height: 100%; justify-content: center; align-items: center;">
+            <ui:VisualElement name="Aim" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;); height: 40px; width: 40px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Canvas" style="flex-grow: 1; padding-top: 5%; padding-right: 15%; padding-left: 15%; padding-bottom: 5%; flex-direction: column; align-items: center;">
         <ui:VisualElement name="MainMenuPanel" class="menuPanel hiddenLeft" style="position: absolute; transition-delay: 0s;">
@@ -44,5 +47,9 @@
             <ui:ListView name="ListView" style="width: 694px; margin-top: 148px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 60%;" />
             <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsBackButton" class="menuButton" />
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="TargetInfo" style="flex-grow: 1; position: absolute;">
+        <ui:ProgressBar value="29.9" title="Health" name="HealthBar" class="unity-progress-bar healthBar" style="height: 42px; width: 338px; font-size: 23px; position: absolute; visibility: hidden;" />
+        <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DamageInfo" style="font-size: 55px; -unity-font-style: bold; color: rgb(250, 0, 0); -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(255, 255, 255); visibility: hidden;" />
     </ui:VisualElement>
 </ui:UXML>

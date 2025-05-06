@@ -6,14 +6,15 @@ public class projectileWeapon_sc : weapon_sc
 {
     public GameObject projectilePrefab; // Prefab for the projectile
     public float projectileSpeed; // Speed of the projectile
+    public Transform projectileSpawner;
 
     protected override void PerformAttack()
     {
         // Instantiate the projectile at the fire point
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject projectile = Instantiate(projectilePrefab, projectileSpawner.position, firePoint.rotation);
 
         // Set the projectile's damage and speed
-        projectile_sc projectileScript = projectile.GetComponent<projectile_sc>();
+        projectile_sc projectileScript = projectile.GetComponentInChildren<projectile_sc>();
         if (projectileScript != null)
         {
             projectileScript.damage = damage;

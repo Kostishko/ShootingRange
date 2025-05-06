@@ -19,24 +19,35 @@ public class projectile_sc : MonoBehaviour
     private void Update()
     {
         // Move the projectile forward
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.parent.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+        speed = 0; // Stop the projectile on collision
         // Check if the object hit is on the specified layers
-        if (((1 << other.gameObject.layer) & hitLayers) != 0)
+        if (collision.gameObject.GetComponentInParent<target_sc>()!=null)
         {
             // Try to get the Target script on the object
-            target_sc target = other.GetComponent<target_sc>();
+            target_sc target = collision.collider.GetComponentInParent<target_sc>();
             if (target != null)
             {
-                // Apply damage to the target
-                target.TakeDamage(damage);
+                if (collision.collider.gameObject == target.critZone)
+                {
+                    target.TakeDamage(damage * 2); // Double damage for critical hit
+                    Debug.Log("Critical hit!");
+                }
+                else if (collision.collider.gameObject == target.hitZone)
+                {
+                    target.TakeDamage(damage);  // damage for hit zone
+                    Debug.Log("Hit zone hit!");
+                }
             }
 
             // Destroy the projectile after hitting something
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
     }
+
+   
 }

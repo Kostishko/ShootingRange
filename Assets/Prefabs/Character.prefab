@@ -232,7 +232,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cb9b956ee6928264ba8589e97b3993f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 7424737385290535920}
   - component: {fileID: 380055548777914594}
   - component: {fileID: 221013572058543780}
+  - component: {fileID: 1814568758579672273}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 6606185803256309489}
-  detectRayRange: 5
+  detectRayRange: 3
   mask:
     serializedVersion: 2
     m_Bits: 0
@@ -385,4 +386,24 @@ MonoBehaviour:
   weapons:
   - {fileID: 0}
   - {fileID: 0}
+  currentWeaponIndex: 0
   weaponHolder: {fileID: 4515701090082776663}
+--- !u!114 &1814568758579672273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742470745049681749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcba3247a588d540b9b155d24bea7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6606185803256309489}
+  detectRayRange: 500
+  mask:
+    serializedVersion: 2
+    m_Bits: 1
+  isInteracting: 0
+  currentTarget: {fileID: 0}

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// references on assets https://ilay-rubinchik.itch.io/low-poly-targe
 public class gameManager_sc : MonoBehaviour
 {
   

@@ -69,7 +69,7 @@ public class UIController : MonoBehaviour
             gameManager.SetGameState(gameManager_sc.GameState.Gameplay);
             MainMenuPanel.AddToClassList("hiddenLeft");            
             //MainMenuPanel.RemoveFromClassList("shownPanel");
-           // overlayRoot.style.display = DisplayStyle.Flex;
+            overlayRoot.style.display = DisplayStyle.Flex;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         };
 

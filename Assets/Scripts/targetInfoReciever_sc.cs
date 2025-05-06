@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class characterInteraction_sc : MonoBehaviour
+public class targetInfoReciever_sc : MonoBehaviour
 {
     public Camera cam;
     //raycast
@@ -15,11 +15,13 @@ public class characterInteraction_sc : MonoBehaviour
     // Start is called before the first frame update
 
     public bool isInteracting = false; // Flag to check if the player is interacting with an object
+    public target_sc currentTarget; // Reference to the target script
+
     void Start()
     {
-   
+
         //raycast initialise
-        detectRay = new Ray(cam.transform.position, cam.transform.forward );
+        detectRay = new Ray(cam.transform.position, cam.transform.forward);
     }
 
     // Update is called once per frame
@@ -33,22 +35,20 @@ public class characterInteraction_sc : MonoBehaviour
 
         if (Physics.Raycast(detectRay, out detectHit, detectRayRange, mask))
         {
-            if (detectHit.collider.GetComponent<interactable_sc>() != null)
+            if (detectHit.collider.GetComponentInParent<target_sc>() != null)
             {
-                isInteracting = true;
-                if(Input.GetKeyDown(KeyCode.E))
+                currentTarget = detectHit.collider.GetComponentInParent<target_sc>();
+                if(currentTarget!=null)
                 {
-                    //Debug.Log("Hit: " + detectHit.collider.GetComponent<interactable_sc>().promtMessage);
-                    detectHit.collider.GetComponent<interactable_sc>().Interact();
+                    isInteracting = true;
                 }
-                //Debug.Log("Hit: " + detectHit.collider.GetComponent<interactable_sc>().promtMessage);
+                             
+            }
+            else
+            {
+                isInteracting = false;
             }
 
         }
-        else
-        {
-            isInteracting = false;
-        }
-
     }
 }

@@ -6,6 +6,14 @@ public class target_sc : MonoBehaviour
 {
     public float health = 100f; // Total health of the target
 
+    public GameObject critZone; // Reference to the critical hit zone (optional)
+    public GameObject hitZone; // Reference to the hit zone (optional)
+
+    public ParticleSystem DieEffect; // Particle effect for when the target dies
+
+    public Transform healthBarPosition; // Position of the health bar (optional)
+    public Transform damageInfoPosition; // Position of the damage info (optional)
+
     public void TakeDamage(float damage)
     {
         // Reduce health by the damage amount
@@ -23,6 +31,7 @@ public class target_sc : MonoBehaviour
     {
         // Handle the target's death (e.g., destroy the object)
         Debug.Log($"{gameObject.name} has been destroyed.");
-        Destroy(gameObject);
+        DieEffect.Play(); // Play the death effect
+        Destroy(gameObject, 0.2f);
     }
 }
