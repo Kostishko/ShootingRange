@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="WeaponCard" src="project://database/Assets/UI/Resources/UI/WeaponCard.uxml?fileID=9197481963319205126&amp;guid=c6e342bca446bef4e87d1214f8a0979d&amp;type=3#WeaponCard" />
     <Style src="project://database/Assets/UI/Resources/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet" />
     <ui:VisualElement name="PromtBox" style="flex-grow: 1; position: absolute; flex-basis: auto; width: 25%; height: 10%; flex-direction: row; display: flex; visibility: hidden; top: 26px; left: 20px;">
         <ui:VisualElement name="PromtPicture" style="flex-grow: 0; flex-shrink: 0; flex-basis: 25%; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;); flex-direction: column; -unity-text-align: upper-left; align-items: center; justify-content: center;">
@@ -46,6 +47,23 @@
             <ui:Label tabindex="-1" text="Records" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" />
             <ui:ListView name="ListView" style="width: 694px; margin-top: 148px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 60%;" />
             <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsBackButton" class="menuButton" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Inventory" class="shownPanel menuPanel" style="flex-grow: 1; position: absolute; flex-direction: column; align-items: stretch; display: flex;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="Inventory" style="flex-grow: 1; align-items: center; margin-bottom: 20%;">
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
+                    <ui:Instance template="WeaponCard" name="WeaponCard1" style="flex-shrink: 1; flex-grow: 1; align-items: auto;" />
+                    <ui:Instance template="WeaponCard" name="WeaponCard2" style="flex-shrink: 1; flex-grow: 1; align-items: auto;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Chest" style="flex-grow: 1; align-items: center; margin-bottom: 20%;">
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
+                    <ui:Instance template="WeaponCard" name="WeaponCard3" style="flex-shrink: 1; flex-grow: 1; align-items: auto;" />
+                    <ui:Instance template="WeaponCard" name="WeaponCard4" style="flex-shrink: 1; flex-grow: 1; align-items: auto;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; flex-shrink: 1; margin-bottom: 34px;">
+                <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuButton" style="width: auto; height: 105px; margin-bottom: 0; margin-top: 0;" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="TargetInfo" style="flex-grow: 1; position: absolute;">

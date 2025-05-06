@@ -16,8 +16,12 @@ public class weaponController_sc : MonoBehaviour
 
     private void Update()
     {
-        HandleWeaponSwitching();
-        HandleAttack();
+
+        if (gameManager_sc.currentGameState == gameManager_sc.GameState.Gameplay || gameManager_sc.currentGameState == gameManager_sc.GameState.Waiting)
+        {
+            HandleWeaponSwitching();
+            HandleAttack();
+        }
 
 
     }
