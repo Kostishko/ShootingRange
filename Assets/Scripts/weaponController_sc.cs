@@ -97,8 +97,14 @@ public class weaponController_sc : MonoBehaviour
             Debug.LogWarning("Invalid weapon slot.");
             return;
         }
-
+        weapon_sc tempWeapon = weapons[slot];
+        int tempIndex = 0;
+        while(newWeapon!=weapons[tempIndex])
+        {
+            tempIndex++;         
+        }
         weapons[slot] = newWeapon;
-        Debug.Log($"Weapon in slot {slot + 1} set to: {newWeapon.weaponName}");
+        weapons[tempIndex] = tempWeapon;
+        
     }
 }

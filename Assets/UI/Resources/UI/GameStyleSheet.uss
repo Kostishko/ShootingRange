@@ -185,3 +185,6 @@ Button.menuButton:hover {
     border-bottom-left-radius: 69px;
     margin-top: 19px;
 }
+
+.weaponCardSelected {
+}

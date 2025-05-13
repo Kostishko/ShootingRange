@@ -1,9 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Resources/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet" />
     <ui:VisualElement name="WeaponCard" class="weaponCard" style="flex-grow: 1; flex-direction: row;">
         <ui:VisualElement name="WeaponPic" style="flex-grow: 1; border-top-left-radius: 69px; border-bottom-left-radius: 69px;" />
         <ui:VisualElement style="flex-grow: 1;">
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponName" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponDesc" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponName" style="font-size: 40px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponDesc" style="font-size: 22px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

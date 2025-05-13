@@ -11,57 +11,88 @@ public class weaponChestUIController_sc : MonoBehaviour
     public weaponChest_sc weaponChest; // Reference to the weapon chest script
     public weaponController_sc weaponController; // Reference to the weapon controller
 
-    public VisualElement weaponCard1;
-    public VisualElement weaponCard2;
-    public VisualElement weaponCard3;
-    public VisualElement weaponCard4;
 
-    public VisualElement currentWeaponCard;
+    public VisualElement chestUI;
+    public VisualElement playerWeaponLayout;
+    public VisualElement weaponInTheChest;
+    public weaponCardData_sc currentWeaponCard;
+    public VisualTreeAsset weaponCardTemplate;
 
-    public weaponCardData_sc weaponCardData1;
-    public weaponCardData_sc weaponCardData2;
-    public weaponCardData_sc weaponCardData3;
-    public weaponCardData_sc weaponCardData4;
+    public List<weaponCardData_sc> weaponData;
+    public List<VisualElement> weaponsCards;
+
+
 
 
 
     public void OnEnable()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
-        root.style.display = DisplayStyle.None; // Hide the UI by default
+        chestUI = root.Q("Inventory");
+        playerWeaponLayout = root.Q("PlayerLayout");
+        weaponInTheChest = root.Q("InTheChest");
 
-        weaponCard1 = root.Q<VisualElement>("WeaponCard1");
-        weaponCard2 = root.Q<VisualElement>("WeaponCard2");
-        weaponCard3 = root.Q<VisualElement>("WeaponCard3");
-        weaponCard4 = root.Q<VisualElement>("WeaponCard4");
-
-        // Set up the weapon cards with the weapons from the weapon chest
-        weaponCardData1 = new weaponCardData_sc(weaponController.weapons[0], weaponCard1);
-        weaponCardData2 = new weaponCardData_sc(weaponController.weapons[1], weaponCard2);
-        weaponCardData3 = new weaponCardData_sc(weaponController.weapons[2], weaponCard3);
-        weaponCardData4 = new weaponCardData_sc(weaponController.weapons[3], weaponCard4);
+        weaponCardTemplate = Resources.Load<VisualTreeAsset>("UI/WeaponCard");
 
 
+        weaponData = new List<weaponCardData_sc>();
+        weaponsCards = new List<VisualElement>();
 
-        weaponCard1.RegisterCallback<ClickEvent>(e =>
+        //add UI information for all weapon 
+        for (int i = 0; i <= weaponController.weapons.Length; i++)
         {
-           if (e.propagationPhase == PropagationPhase.BubbleUp || e.propagationPhase == PropagationPhase.AtTarget)
+            VisualElement newCard = weaponCardTemplate.CloneTree();
+            weaponCardData_sc weaponCard = new weaponCardData_sc(weaponController.weapons[i], newCard);
+
+            if (i < 2)
             {
-                if(currentWeaponCard != null)
+                //first two weapon are in player layout
+                playerWeaponLayout.Add(newCard);
+            }
+            else
+            {
+                //rest of the weapons are in the chest
+                weaponInTheChest.Add(newCard);
+            }
+            
+            weaponData.Add(weaponCard);
+
+            newCard.RegisterCallback<ClickEvent>(e => {
+                if (e.propagationPhase == PropagationPhase.AtTarget || e.propagationPhase == PropagationPhase.BubbleUp)
                 {
-                    if(currentWeaponCard != weaponCard1)
+                    if (currentWeaponCard != null)
                     {
+                        weaponController.SetWeapon(i, currentWeaponCard.weapon);
+                        currentWeaponCard.WeaponCard.RemoveFromClassList("weaponCardSelected");
+
+
+                    }
+                    else
+                    {
+                        currentWeaponCard = weaponData[i];
+                        currentWeaponCard.WeaponCard.AddToClassList("weaponCardSelected");
                         
 
                     }
                 }
-                else
-                {
-                    currentWeaponCard = weaponCard1;
-                }
-            }
+            });
 
-        });
+        }
+
+
+
+
+
+    }
+
+    public void ShowWeaponChestUI()
+    {
+        chestUI.RemoveFromClassList("hiddenLeft");
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+
+
+
+
 
     }
 
