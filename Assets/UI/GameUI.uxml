@@ -9,6 +9,7 @@
     <ui:VisualElement name="GameplayOverlay" style="flex-grow: 1; display: flex; position: absolute; width: 100%; height: 100%;">
         <ui:VisualElement name="RoundOnLayoutPanel" style="flex-grow: 1; align-items: center; visibility: visible; display: flex;">
             <ui:Label tabindex="-1" text="00:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Timer" class="timerLabel" style="left: 0; top: 10%; visibility: visible;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Score" class="timerLabel" style="translate: 800px 0;" />
         </ui:VisualElement>
         <ui:VisualElement name="ConstantLayoutPanel" style="flex-grow: 1; flex-direction: row;">
             <ui:VisualElement name="LeftConstantPanel" style="flex-grow: 0; width: 50%;">
@@ -50,10 +51,10 @@
         <ui:VisualElement name="Inventory" class="menuPanel hiddenLeft" style="flex-grow: 1; position: absolute; flex-direction: column; align-items: stretch; display: flex;">
             <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
                 <ui:VisualElement name="PlayerLayout" style="flex-grow: 1; align-items: center; margin-bottom: 0;">
-                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
+                    <ui:Label tabindex="-1" text="Pockets" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="InTheChest" style="flex-grow: 1; align-items: center; margin-bottom: 0; flex-shrink: 0;">
-                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
+                    <ui:Label tabindex="-1" text="Chest" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 0; align-items: center; justify-content: center; flex-shrink: 1; margin-bottom: 34px;">

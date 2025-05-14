@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,30 @@ public class target_sc : MonoBehaviour
 
     public Transform healthBarPosition; // Position of the health bar (optional)
     public Transform damageInfoPosition; // Position of the damage info (optional)
+
+    public event EventHandler OnDestroyed; // Event triggered when the target is destroyed
+
+    public GameObject character;
+
+    
+
+    public GameObject targetBody;
+
+    public void Update()
+    {
+        if (this.character != null)
+        {
+            var lookatTarget = character.transform.position;
+            lookatTarget.y = transform.position.y;
+            transform.LookAt(lookatTarget);
+
+            //gameObject.transform.rotation = new Quaternion(0, temp.rotation.y, 0, 1);
+
+
+        }
+    }
+
+
 
     public void TakeDamage(float damage)
     {
@@ -32,6 +57,9 @@ public class target_sc : MonoBehaviour
         // Handle the target's death (e.g., destroy the object)
         Debug.Log($"{gameObject.name} has been destroyed.");
         DieEffect.Play(); // Play the death effect
+        OnDestroyed?.Invoke(this, EventArgs.Empty); // Trigger the destroyed event
         Destroy(gameObject, 0.2f);
     }
+
+
 }
