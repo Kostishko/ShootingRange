@@ -66,7 +66,7 @@ public class UIController : MonoBehaviour
 
         NewGameButton.clicked += () =>
         {
-            gameManager.SetGameState(gameManager_sc.GameState.Gameplay);
+            gameManager.SetGameState(gameManager_sc.GameState.Waiting);
             MainMenuPanel.AddToClassList("hiddenLeft");            
             //MainMenuPanel.RemoveFromClassList("shownPanel");
             overlayRoot.style.display = DisplayStyle.Flex;

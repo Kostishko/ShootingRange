@@ -64,7 +64,7 @@ public class weaponController_sc : MonoBehaviour
     }
 
     // Equips a weapon by index
-    private void EquipWeapon(int weaponIndex)
+    public void EquipWeapon(int weaponIndex)
     {
         if (weaponIndex < 0 || weaponIndex >= weapons.Length || weapons[weaponIndex] == null)
         {

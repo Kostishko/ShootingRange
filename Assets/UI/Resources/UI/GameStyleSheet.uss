@@ -184,6 +184,12 @@ Button.menuButton:hover {
     border-bottom-right-radius: 69px;
     border-bottom-left-radius: 69px;
     margin-top: 19px;
+    flex-grow: 0;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    align-self: auto;
 }
 
 .weaponCardSelected {

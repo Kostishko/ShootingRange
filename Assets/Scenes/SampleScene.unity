@@ -1158,6 +1158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promtMessage: Weapon Chest
+  weaponChestUIController: {fileID: 1195555142}
 --- !u!4 &359859710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7879892570716506082, guid: 6b3b3c2669201b04e98d4c78fc3cb275, type: 3}
@@ -2886,9 +2887,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195555136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ceb2ec88e4ab7b4b90752948cd6a398, type: 3}
+  m_Script: {fileID: 11500000, guid: 33d34314837186f43ac9a3aa451519cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponChest: {fileID: 357558339}
+  weaponController: {fileID: 1912033886}
+  weaponCardTemplate: {fileID: 0}
 --- !u!1001 &1204294671
 PrefabInstance:
   m_ObjectHideFlags: 0

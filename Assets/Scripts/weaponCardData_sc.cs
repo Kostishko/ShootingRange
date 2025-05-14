@@ -17,12 +17,12 @@ public class weaponCardData_sc
         this.WeaponCard = weaponCard;
         this.weapon = weapon;
         WeaponName = weaponCard.Q<Label>("WeaponName");
-        WeaponDescription = weaponCard.Q<Label>("WeaponDescription");
-        WeaponPicture = weaponCard.Q<VisualElement>("WeaponPicture");
+        WeaponDescription = weaponCard.Q<Label>("WeaponDesc");
+        WeaponPicture = weaponCard.Q<VisualElement>("WeaponPic");
 
-        WeaponName.text = weapon.weaponName;
-        WeaponDescription.text = weapon.description;
-        WeaponPicture.style.backgroundImage = new StyleBackground( weapon.weaponStats.weaponIcon);
+        WeaponName.text = weapon.weaponStats.weaponName;
+        WeaponDescription.text = weapon.weaponStats.description;        
+        WeaponPicture.style.backgroundImage = new StyleBackground(weapon.weaponStats.weaponIcon);
     }
 
 
