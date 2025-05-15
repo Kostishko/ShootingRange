@@ -203,3 +203,29 @@ Button.menuButton:hover {
 .weaponCardSelected:hover {
     background-color: rgba(84, 62, 111, 0.42);
 }
+
+.textField .unity-base-field__label {
+    font-size: 43px;
+    color: rgb(153, 32, 192);
+    -unity-font-style: bold;
+}
+
+.textField .unity-text-element--inner-input-field-component {
+    -unity-text-align: upper-center;
+    font-size: 42px;
+    color: rgb(255, 0, 226);
+    white-space: nowrap;
+    -unity-font-style: bold;
+}
+
+.textField .unity-base-text-field__input {
+    background-color: rgba(168, 178, 90, 0.38);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+}

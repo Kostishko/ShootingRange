@@ -6,6 +6,7 @@ using UnityEngine;
 
 
 
+
 // references on assets https://ilay-rubinchik.itch.io/low-poly-targe
 public class gameManager_sc : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class gameManager_sc : MonoBehaviour
     public int score = 0; // Player's score 
 
     public event EventHandler<GameState> gameStateChanged;
+    public event EventHandler runEnded;
 
 
     public enum GameState
@@ -109,7 +111,10 @@ public class gameManager_sc : MonoBehaviour
             }
         }
         activeTargets.Clear();
-        SetGameState(GameState.Waiting);
+        runEnded?.Invoke(this, EventArgs.Empty); // Notify subscribers that the game has ended
+        SetGameState(GameState.MainMenu);
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+
     }
 
     private void SpawnTarget()
