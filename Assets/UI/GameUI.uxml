@@ -61,7 +61,7 @@
                 <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" name="InventoryExit" class="menuButton" style="width: auto; height: 105px; margin-bottom: 0; margin-top: 0;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="RunEnd" class="menuPanel" style="position: absolute; transition-delay: 0.2s;">
+        <ui:VisualElement name="RunEnd" class="menuPanel hiddenLeft" style="position: absolute; transition-delay: 0.2s;">
             <ui:Label tabindex="-1" text="Congrats!" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" />
             <ui:Label tabindex="-1" text="0000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ScoreAtCongrats" class="timerLabel" style="margin-top: 16%; flex-grow: 1; flex-shrink: 1;" />
             <ui:TextField picking-mode="Ignore" label="Type Your Name" name="NameInput" class="textField" style="flex-grow: 1; flex-shrink: 1; flex-direction: column; align-items: center; margin-top: 13%; margin-right: 33%; margin-left: 33%; margin-bottom: 3%; padding-top: 0;" />

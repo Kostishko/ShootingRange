@@ -7,7 +7,7 @@ public class weaponController_sc : MonoBehaviour
     public weapon_sc[] weapons = new weapon_sc[4]; // Array to hold two weapons
     public int currentWeaponIndex = 0; // Index of the currently equipped weapon
 
-    public Transform weaponHolder; // Transform of the character's weapon holder (e.g., hand or weapon slot)
+    public Transform weaponHolder; // Transform of the character's weapon holder 
 
     private void Start()
     {

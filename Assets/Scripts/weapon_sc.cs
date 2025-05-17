@@ -19,9 +19,11 @@ public abstract class weapon_sc : MonoBehaviour
     public bool isReloading;
     public Transform firePoint; // Point from which the weapon fires (e.g., muzzle)   
 
-    public Transform weaponHolder; // Transform of the character's weapon holder (e.g., hand or weapon slot)
+    public Transform weaponHolder; // Transform of the character's weapon holder
 
     private float nextFireTime = 0f; // Time until the weapon can fire again
+
+    
 
     private void OnEnable()
     {
@@ -39,6 +41,8 @@ public abstract class weapon_sc : MonoBehaviour
             reloadTimer = 0;
 
         }
+
+        
     }
 
     // Method to fire the weapon
@@ -48,8 +52,8 @@ public abstract class weapon_sc : MonoBehaviour
         {
             if (!isReloading)
             { 
-            reloadTimer = reloadTime; // Start the reload timer
-            isReloading = true; // Set reloading state
+                reloadTimer = reloadTime; // Start the reload timer
+                isReloading = true; // Set reloading state
             }
 
         }
