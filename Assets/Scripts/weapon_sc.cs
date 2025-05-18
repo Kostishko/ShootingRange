@@ -25,7 +25,7 @@ public abstract class weapon_sc : MonoBehaviour
 
     
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         if (weaponStats != null)
         {
@@ -46,7 +46,7 @@ public abstract class weapon_sc : MonoBehaviour
     }
 
     // Method to fire the weapon
-    public void Fire()
+    public virtual void Fire()
     {
         if (currentAmmo <= 0)
         {
@@ -74,7 +74,7 @@ public abstract class weapon_sc : MonoBehaviour
 
     }
 
-    public void Update()
+    public virtual void Update()
     {
         // Match the position and rotation of the weapon holder
         transform.position = weaponHolder.position;
@@ -91,12 +91,12 @@ public abstract class weapon_sc : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && currentAmmo<magazineSize)
-        {
-            currentAmmo = 0; // Empty the magazine
-            reloadTimer = reloadTime; // Start the reload timer
-            isReloading = true; // Set reloading state
-        }
+        //if(Input.GetKeyDown(KeyCode.R) && currentAmmo<magazineSize)
+        //{
+        //    currentAmmo = 0; // Empty the magazine
+        //    reloadTimer = reloadTime; // Start the reload timer
+        //    isReloading = true; // Set reloading state
+        //}
     }
 
     // Abstract method for performing the attack

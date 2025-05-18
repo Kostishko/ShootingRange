@@ -3092,6 +3092,11 @@ MonoBehaviour:
   gameManager: {fileID: 1264391242}
   nonActive: {fileID: 1155548094}
   active: {fileID: 188017013}
+--- !u!1 &1172416352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 69295925047469264, guid: f6426955ceb977647832dc1945a18592, type: 3}
+  m_PrefabInstance: {fileID: 1842136092167067327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1184779069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7601169563594727590, guid: 2cd07ca2bf9d2f0469d75e5b691d58a3, type: 3}
@@ -3981,22 +3986,43 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6281424698479989189, guid: 3fa6fbb56ca0e844cb205c077c803256, type: 3}
---- !u!114 &1393397284 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3124193851343768798, guid: f6426955ceb977647832dc1945a18592, type: 3}
-  m_PrefabInstance: {fileID: 1842136092167067327}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f6d0929d2bfbc4ab01202191bc19c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1393397285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5328800677321652948, guid: f6426955ceb977647832dc1945a18592, type: 3}
   m_PrefabInstance: {fileID: 1842136092167067327}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1393397286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172416352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7f22b42d3729d479ccb3cb0080268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponStats: {fileID: 11400000, guid: 21f9f1491bb308d47889ca2023270ff7, type: 2}
+  muzzleFlash: {fileID: 2031307193}
+  weaponName: 
+  description: 
+  damage: 0
+  fireRate: 0
+  range: 500
+  magazineSize: 0
+  currentAmmo: 0
+  reloadTime: 0
+  reloadTimer: 0
+  isReloading: 0
+  firePoint: {fileID: 910097883}
+  weaponHolder: {fileID: 0}
+  isAuto: 0
+  wandAnimator: {fileID: 0}
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  hitEffectPrefab: {fileID: 8267900508572826918, guid: ae391caebb5669f40b243936c0c590fc, type: 3}
 --- !u!1001 &1405051514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6088,6 +6114,11 @@ Transform:
   - {fileID: 202418504}
   m_Father: {fileID: 205050087}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!198 &2031307193 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5242527568841389686, guid: f6426955ceb977647832dc1945a18592, type: 3}
+  m_PrefabInstance: {fileID: 1842136092167067327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039602049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fa6fbb56ca0e844cb205c077c803256, type: 3}
@@ -6783,6 +6814,10 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 910097883}
+    - target: {fileID: 3124193851343768798, guid: f6426955ceb977647832dc1945a18592, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5328800677321652948, guid: f6426955ceb977647832dc1945a18592, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.228
@@ -6823,10 +6858,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3124193851343768798, guid: f6426955ceb977647832dc1945a18592, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 69295925047469264, guid: f6426955ceb977647832dc1945a18592, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1393397286}
   m_SourcePrefab: {fileID: 100100000, guid: f6426955ceb977647832dc1945a18592, type: 3}
 --- !u!1001 &2051470925313066438
 PrefabInstance:
@@ -7342,7 +7381,7 @@ PrefabInstance:
     - target: {fileID: 221013572058543780, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: weapons.Array.data[3]
       value: 
-      objectReference: {fileID: 1393397284}
+      objectReference: {fileID: 1393397286}
     - target: {fileID: 380055548777914594, guid: c200d51ea1241284aa6906d1755dbaac, type: 3}
       propertyPath: mask.m_Bits
       value: 64

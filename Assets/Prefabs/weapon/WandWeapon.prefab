@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5328800677321652948}
-  - component: {fileID: 3124193851343768798}
   - component: {fileID: 1046551714729568900}
   m_Layer: 0
   m_Name: WandWeapon
@@ -35,36 +34,6 @@ Transform:
   - {fileID: 6108554006004499775}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3124193851343768798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69295925047469264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f6d0929d2bfbc4ab01202191bc19c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponStats: {fileID: 11400000, guid: 21f9f1491bb308d47889ca2023270ff7, type: 2}
-  muzzleFlash: {fileID: 5242527568841389686}
-  weaponName: 
-  description: 
-  damage: 0
-  fireRate: 0
-  range: 500
-  magazineSize: 0
-  currentAmmo: 0
-  reloadTime: 0
-  reloadTimer: 0
-  isReloading: 0
-  firePoint: {fileID: 0}
-  weaponHolder: {fileID: 0}
-  hitLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  hitEffectPrefab: {fileID: 8267900508572826918, guid: ae391caebb5669f40b243936c0c590fc, type: 3}
 --- !u!95 &1046551714729568900
 Animator:
   serializedVersion: 5
