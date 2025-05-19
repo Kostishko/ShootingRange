@@ -21,7 +21,7 @@ public abstract class weapon_sc : MonoBehaviour
 
     public Transform weaponHolder; // Transform of the character's weapon holder
 
-    private float nextFireTime = 0f; // Time until the weapon can fire again
+    protected float nextFireTime = 0f; // Time until the weapon can fire again
 
     
 
@@ -45,58 +45,11 @@ public abstract class weapon_sc : MonoBehaviour
         
     }
 
-    // Method to fire the weapon
-    public virtual void Fire()
-    {
-        if (currentAmmo <= 0)
-        {
-            if (!isReloading)
-            { 
-                reloadTimer = reloadTime; // Start the reload timer
-                isReloading = true; // Set reloading state
-            }
-
-        }
-        else
-        {
-
-            if (Time.time >= nextFireTime)
-            {
-                nextFireTime = Time.time + 1f / fireRate;
-                if (muzzleFlash != null)
-                {
-                    muzzleFlash.Play(); // Play the muzzle flash effect
-                }
-                currentAmmo--; // Decrease ammo count
-                PerformAttack();
-            }
-        }
-
-    }
-
     public virtual void Update()
     {
         // Match the position and rotation of the weapon holder
         transform.position = weaponHolder.position;
         transform.rotation = weaponHolder.rotation;
-
-        if(reloadTimer > 0)
-        {
-            reloadTimer -= Time.deltaTime;
-            if(reloadTimer <= 0)
-            {
-                currentAmmo = magazineSize; // Reload the weapon
-                reloadTimer = 0;
-                isReloading = false; // Reset reloading state
-            }
-        }
-
-        //if(Input.GetKeyDown(KeyCode.R) && currentAmmo<magazineSize)
-        //{
-        //    currentAmmo = 0; // Empty the magazine
-        //    reloadTimer = reloadTime; // Start the reload timer
-        //    isReloading = true; // Set reloading state
-        //}
     }
 
     // Abstract method for performing the attack

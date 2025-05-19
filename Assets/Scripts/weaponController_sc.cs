@@ -20,7 +20,7 @@ public class weaponController_sc : MonoBehaviour
         if (gameManager_sc.currentGameState == gameManager_sc.GameState.Gameplay || gameManager_sc.currentGameState == gameManager_sc.GameState.Waiting)
         {
             HandleWeaponSwitching();
-            HandleAttack();
+            //HandleAttack();
         }
 
 
@@ -52,16 +52,16 @@ public class weaponController_sc : MonoBehaviour
     }
 
     // Handles attacking with the current weapon
-    private void HandleAttack()
-    {
-        if (Input.GetButtonDown("Fire1")) // Left mouse button
-        {
-            if (weapons[currentWeaponIndex] != null)
-            {
-                weapons[currentWeaponIndex].Fire();
-            }
-        }
-    }
+    //private void HandleAttack()
+    //{
+    //    if (Input.GetButtonDown("Fire1")) // Left mouse button
+    //    {
+    //        if (weapons[currentWeaponIndex] != null)
+    //        {
+    //            weapons[currentWeaponIndex].Fire();
+    //        }
+    //    }
+    //}
 
     // Equips a weapon by index
     public void EquipWeapon(int weaponIndex)

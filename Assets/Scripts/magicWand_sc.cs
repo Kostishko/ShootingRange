@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class magicWand_sc : weapon_sc
 {
-
-    public bool isAuto = false; // Set in Inspector or code
-
     public Animator wandAnimator;
 
 
@@ -27,24 +24,37 @@ public class magicWand_sc : weapon_sc
     public override void Update()
     {
         base.Update();
-        // Example: auto-fire if isAuto, else single shot
-        if (isAuto)
+       
+        
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (Input.GetButton("Fire1"))
+           
+            wandAnimator.SetTrigger("ShootTrigger"); // Trigger the fire animation
+            if (currentAmmo <= 0)
             {
-                Fire();
-                wandAnimator.SetTrigger("ShootTrigger"); // Trigger the fire animation
+                if (!isReloading)
+                {
+                    reloadTimer = reloadTime; // Start the reload timer
+                    isReloading = true; // Set reloading state
+                }
 
             }
-        }
-        else
-        {
-            if (Input.GetButtonDown("Fire1"))
+            else
             {
-                Fire();
-                wandAnimator.SetTrigger("ShootTrigger"); // Trigger the fire animation
+
+                if (Time.time >= nextFireTime)
+                {
+                    nextFireTime = Time.time + 1f / fireRate;
+                    if (muzzleFlash != null)
+                    {
+                        muzzleFlash.Play(); // Play the muzzle flash effect
+                    }
+                    currentAmmo--; // Decrease ammo count
+                    PerformAttack();
+                }
             }
         }
+
 
         // Handle reload input
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < magazineSize)
@@ -52,13 +62,21 @@ public class magicWand_sc : weapon_sc
             currentAmmo = 0;
             reloadTimer = reloadTime;
             isReloading = true;
-            wandAnimator.SetBool("isReloadingAnim", true); // Trigger the reload animation
+            wandAnimator.SetTrigger("isReloadingAnim"); // Trigger the reload animation
         }
 
-        // Call base Update for reload logic and weapon holder sync
-        base.Update();
+        if (reloadTimer > 0)
+        {
+            reloadTimer -= Time.deltaTime;
+            if (reloadTimer <= 0)
+            {
+                currentAmmo = magazineSize; // Reload the weapon
+                reloadTimer = 0;
+                isReloading = false; // Reset reloading state
+            }
+        }
 
-        if(!isReloading)
+        if (!isReloading)
         {
             wandAnimator.SetBool("isReloadingAnim", false); // Stop the reload animation
         }
