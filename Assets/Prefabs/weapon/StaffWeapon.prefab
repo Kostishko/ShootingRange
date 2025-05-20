@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 186788749166015783}
-  - component: {fileID: 1975687901550372070}
+  - component: {fileID: 4586243942521441156}
+  - component: {fileID: 1205385480631450951}
   m_Layer: 0
   m_Name: StaffWeapon
   m_TagString: Untagged
@@ -30,11 +31,10 @@ Transform:
   m_LocalScale: {x: 0.26638007, y: 0.26638, z: 0.26638007}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3056037958892760747}
   - {fileID: 5569022233014052641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1975687901550372070
+--- !u!114 &4586243942521441156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5973030315781640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f6d0929d2bfbc4ab01202191bc19c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9f5b58f754ab946be15de1f4204ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponStats: {fileID: 11400000, guid: 561577495bb8c3141afefd0967888b47, type: 2}
@@ -52,18 +52,41 @@ MonoBehaviour:
   description: 
   damage: 0
   fireRate: 0
-  range: 500
+  range: 0
   magazineSize: 0
   currentAmmo: 0
   reloadTime: 0
   reloadTimer: 0
   isReloading: 0
+  isShooting: 0
   firePoint: {fileID: 0}
   weaponHolder: {fileID: 0}
+  wandAnimator: {fileID: 0}
   hitLayers:
     serializedVersion: 2
     m_Bits: 1
   hitEffectPrefab: {fileID: 8267900508572826918, guid: ae391caebb5669f40b243936c0c590fc, type: 3}
+--- !u!95 &1205385480631450951
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973030315781640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba649b740ff17c542af451bad0b895cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8683128939489281209
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,12 +113,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8683128939489281209}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000078976154, y: 0.0000007227063, z: 0.7071067, w: 0.7071069}
-  m_LocalPosition: {x: 0.08900001, y: 0.217, z: 0.852}
+  m_LocalRotation: {x: -0.49999994, y: 0.49999976, z: 0.5000002, w: 0.50000024}
+  m_LocalPosition: {x: 0.08900011, y: 1.0289047, z: -0.040093184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 186788749166015783}
+  m_Father: {fileID: 5569022233014052641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!198 &201215191441496394
 ParticleSystem:
@@ -4948,7 +4971,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4f736f50274c2f742b73039f19a2b9ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3056037958892760747}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f736f50274c2f742b73039f19a2b9ef, type: 3}
 --- !u!4 &5569022233014052641 stripped

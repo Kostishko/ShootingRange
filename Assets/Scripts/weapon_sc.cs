@@ -17,6 +17,7 @@ public abstract class weapon_sc : MonoBehaviour
     public float reloadTime; // Reload time for the weapon
     public float reloadTimer;
     public bool isReloading;
+    public bool isShooting; 
     public Transform firePoint; // Point from which the weapon fires (e.g., muzzle)   
 
     public Transform weaponHolder; // Transform of the character's weapon holder
