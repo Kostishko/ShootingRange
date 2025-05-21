@@ -34,10 +34,16 @@ public class projectileWeapon_sc : weapon_sc
         }
 
         wandAnimator.SetTrigger("FinShoot"); // Trigger the fire animation
+        SoundFXManager_sc.instance.PlaySoundFXClip(shootSound, this.transform, 1f); // Play the shooting sound
         currentAmmo--; // Decrease ammo count
         isShooting = false; // Reset shooting state
-        wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
-        isReloading = true; // Set reloading state
+        if (currentAmmo <= 0)
+        {
+            wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
+            SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
+            isReloading = true; // Set reloading state
+        }
+
     }
 
     public override void Update()
@@ -54,6 +60,7 @@ public class projectileWeapon_sc : weapon_sc
         {
             currentAmmo = 0;
             wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
+            SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
             isReloading = true; // Set reloading state
         }
 
@@ -69,6 +76,7 @@ public class projectileWeapon_sc : weapon_sc
                 if (currentAmmo <= 0)
                 {
                     wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
+                    SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
                     isReloading = true; // Set reloading state
                 }
                 else
@@ -79,6 +87,7 @@ public class projectileWeapon_sc : weapon_sc
                         nextFireTime = Time.time + 1f / fireRate;
                         wandAnimator.SetTrigger("Shoot"); // Trigger the fire animation
                         isShooting = true; // Set shooting state
+                        
                     }
                 }
             }

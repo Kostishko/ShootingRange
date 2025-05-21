@@ -19,7 +19,10 @@ public class target_sc : MonoBehaviour
 
     public GameObject character;
 
-    
+
+    public AudioClip dieSound; // Sound effect for when the target dies
+
+
 
     public GameObject targetBody;
 
@@ -49,6 +52,7 @@ public class target_sc : MonoBehaviour
         if (health <= 0f)
         {
             Die();
+            SoundFXManager_sc.instance.PlaySoundFXClip(dieSound, this.transform, 1f); // Play the death sound
         }
     }
 

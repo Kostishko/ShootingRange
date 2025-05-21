@@ -32,8 +32,8 @@ public class gameplayOverlayUI_sc : MonoBehaviour
 
         //run ended panel 
         RunEnd = root.Q("RunEnd");
-        nameInput = RunEnd.Q<TextField>("NameInput");
-        nameInput.SetEnabled(false);
+        //nameInput = RunEnd.Q<TextField>("NameInput");
+        //nameInput.SetEnabled(false);
         submitButton = RunEnd.Q<Button>("RunEndButton");
         scoreAtCongrats = RunEnd.Q<Label>("ScoreAtCongrats");
         RunEnd.AddToClassList("hiddenLeft");
@@ -43,7 +43,7 @@ public class gameplayOverlayUI_sc : MonoBehaviour
 
             //finishing the run
             RunEnd.AddToClassList("hiddenLeft");
-            nameInput.SetEnabled(false);
+            //nameInput.SetEnabled(false);
             gameManager.SetGameState(gameManager_sc.GameState.Waiting);
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         };
@@ -77,7 +77,7 @@ public class gameplayOverlayUI_sc : MonoBehaviour
 
     public void ShowRunEnd(object sender, EventArgs a)
     {
-        nameInput.SetEnabled(true);
+        //nameInput.SetEnabled(true);
         RunEnd.RemoveFromClassList("hiddenLeft");        
     }
 

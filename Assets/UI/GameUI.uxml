@@ -38,9 +38,10 @@
             <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="menuButton" />
         </ui:VisualElement>
         <ui:VisualElement name="Setting" class="menuPanel hiddenTop" style="position: absolute; transition-delay: 0s;">
-            <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" />
-            <ui:Slider label="Sound" high-value="100" name="SoundSlider" class="MenuSlider" />
-            <ui:Slider label="Music" high-value="100" name="MusicSlider" class="MenuSlider" />
+            <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" style="top: -47px; left: 591px;" />
+            <ui:Slider label="Master" high-value="1" name="MasterSlider" low-value="0.0001" class="MenuSlider" />
+            <ui:Slider label="Sound" high-value="1" name="SoundSlider" low-value="0.0001" class="MenuSlider" />
+            <ui:Slider label="Music" high-value="1" name="MusicSlider" low-value="0.0001" class="MenuSlider" />
             <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBackButton" class="menuButton" style="margin-bottom: 0; margin-top: 120px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Records" class="menuPanel hiddenRight" style="position: absolute; transition-delay: 0s;">

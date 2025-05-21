@@ -36,6 +36,7 @@ public class staffWeapon_sc : weapon_sc
         {
             currentAmmo = 0;
             wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
+            SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
             isReloading = true; // Set reloading state
         }
 
@@ -74,6 +75,7 @@ public class staffWeapon_sc : weapon_sc
         }
 
         currentAmmo--; // Decrease ammo count
+        SoundFXManager_sc.instance.PlaySoundFXClip(shootSound, this.transform, 1f); // Play the shooting sound
 
         GameObject effect = Instantiate(hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal)); // Instantiate hit effect
         Destroy(effect, 2f); // Destroy the effect after 2 seconds
@@ -89,6 +91,7 @@ public class staffWeapon_sc : weapon_sc
                 if (currentAmmo < 1)
                 {
                     wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
+                    SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
                     isReloading = true; // Set reloading state
                 }
                 else
@@ -104,13 +107,14 @@ public class staffWeapon_sc : weapon_sc
             currentAmmo = 0; // Set ammo to zero
             wandAnimator.SetTrigger("FinShoot"); // Trigger the fire animation
             wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
+            SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
             isShooting = false; // Reset shooting state
             isReloading = true; // Set reloading state
         }
 
         if(isShooting && Input.GetButtonUp("Fire1"))
         {
-            wandAnimator.SetTrigger("FinShoot"); // Trigger the fire finish animation
+            wandAnimator.SetTrigger("FinShoot"); // Trigger the fire finish animation           
             isShooting = false; // Reset shooting state
         }
 

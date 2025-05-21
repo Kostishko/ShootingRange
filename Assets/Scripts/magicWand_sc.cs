@@ -10,6 +10,8 @@ public class magicWand_sc : weapon_sc
     public LayerMask hitLayers; // Layers that the raycast can hit
     public GameObject hitEffectPrefab; // Prefab for the hit effect (optional)
 
+    public AudioClip shootWaveSound;
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -36,6 +38,7 @@ public class magicWand_sc : weapon_sc
         {
             currentAmmo = 0;
             wandAnimator.SetTrigger("ReloadingAnim"); // Trigger the reload animation
+            SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
             isReloading = true; // Set reloading state
         }
 
@@ -73,6 +76,7 @@ public class magicWand_sc : weapon_sc
 
         }
         wandAnimator.SetTrigger("FinShoot"); // Trigger the fire animation
+        SoundFXManager_sc.instance.PlaySoundFXClip(shootSound, this.transform, 1f); // Play the shooting sound
         currentAmmo--; // Decrease ammo count
         isShooting = false; // Reset shooting state
         GameObject effect = Instantiate(hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal)); // Instantiate hit effect
@@ -89,6 +93,7 @@ public class magicWand_sc : weapon_sc
                 if (currentAmmo <= 0)
                 {
                     wandAnimator.SetTrigger("ReloadingAnim"); // Trigger the reload animation
+                    SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
                     isReloading = true; // Set reloading state
                 }
                 else
@@ -98,6 +103,7 @@ public class magicWand_sc : weapon_sc
                     {
                         nextFireTime = Time.time + 1f / fireRate;
                         wandAnimator.SetTrigger("ShootTrigger"); // Trigger the fire animation
+                        SoundFXManager_sc.instance.PlaySoundFXClip(shootWaveSound, this.transform, 1f); // Play the shooting sound
                         isShooting = true; // Set shooting state
                     }
                 }

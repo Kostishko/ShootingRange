@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponIcon: {fileID: 21300000, guid: 8242bf428eca6d1498a77b632be649a5, type: 3}
   weaponName: Strange Book
-  description: Rifle
-  damage: 5
+  description: Call a meteor to the target
+  damage: 100
   fireRate: 3
-  magazineSize: 30
+  magazineSize: 3
   reloadTime: 2

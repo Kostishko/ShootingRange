@@ -7,6 +7,8 @@ public class weaponChest_sc : interactable_sc
     //somwhere I had to put this in different way. 
     public weaponChestUIController_sc weaponChestUIController;
 
+    public AudioClip openChestSound; // Sound effect for opening the chest
+
 
     public override void Interact()
     {
@@ -21,6 +23,7 @@ public class weaponChest_sc : interactable_sc
             // in a good worl it should be a pop up message
         }
         Debug.Log("Interacted with" + promtMessage);
+        SoundFXManager_sc.instance.PlaySoundFXClip(openChestSound, this.transform, 1f); // Play the sound effect
     }
 
 }

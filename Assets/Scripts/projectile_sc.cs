@@ -22,7 +22,7 @@ public class projectile_sc : MonoBehaviour
         transform.parent.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         speed = 0; // Stop the projectile on collision
         // Check if the object hit is on the specified layers
@@ -44,9 +44,10 @@ public class projectile_sc : MonoBehaviour
                 }
             }
 
-            // Destroy the projectile after hitting something
-            Destroy(gameObject, 1f);
+
         }
+        // Destroy the projectile after hitting something
+        Destroy(gameObject, 1f);
     }
 
    

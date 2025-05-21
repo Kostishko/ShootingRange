@@ -24,7 +24,11 @@ public abstract class weapon_sc : MonoBehaviour
 
     protected float nextFireTime = 0f; // Time until the weapon can fire again
 
-    
+    //Sounds
+    public AudioClip shootSound; // Sound effect for shooting
+    public AudioClip reloadSound; // Sound effect for reloading
+
+
 
     protected virtual void OnEnable()
     {

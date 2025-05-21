@@ -4920,11 +4920,15 @@ MonoBehaviour:
   reloadTime: 0
   reloadTimer: 0
   isReloading: 0
+  isShooting: 0
   firePoint: {fileID: 0}
   weaponHolder: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 542e83c7ac90a8c488232db778e1975e, type: 3}
+  reloadSound: {fileID: 8300000, guid: 75f5e9f66e03ccd468b9683b63bbeb4d, type: 3}
   projectilePrefab: {fileID: 1951681415480468140, guid: f26d2ee8d4230284281a3bdcd2741e70, type: 3}
   projectileSpeed: 150
   projectileSpawner: {fileID: 1910629977813385272}
+  wandAnimator: {fileID: 0}
 --- !u!1001 &5761363048840159310
 PrefabInstance:
   m_ObjectHideFlags: 0

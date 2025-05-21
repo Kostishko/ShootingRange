@@ -61,6 +61,8 @@ MonoBehaviour:
   isShooting: 0
   firePoint: {fileID: 0}
   weaponHolder: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: bc01d115a183bc3438459e175601c79b, type: 3}
+  reloadSound: {fileID: 8300000, guid: cfb985975580d3a4f849f1ce5e344696, type: 3}
   wandAnimator: {fileID: 0}
   hitLayers:
     serializedVersion: 2

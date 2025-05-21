@@ -54,6 +54,7 @@ MonoBehaviour:
   healthBarPosition: {fileID: 593305492813415585}
   damageInfoPosition: {fileID: 2187616800767606711}
   character: {fileID: 0}
+  dieSound: {fileID: 8300000, guid: 279d56688190e134c9388379fca94006, type: 3}
   targetBody: {fileID: 0}
 --- !u!1 &2541060900673745711
 GameObject:
