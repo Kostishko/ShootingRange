@@ -78,7 +78,7 @@
             <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
                 <ui:VisualElement style="flex-grow: 1; width: 33%; align-items: center; justify-content: flex-start; flex-direction: column; height: auto; padding-top: 18px; padding-right: 18px; padding-bottom: 18px; padding-left: 18px;">
                     <ui:VisualElement style="flex-grow: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; height: 25%;">
-                        <ui:Label tabindex="-1" text="This game has been created by&#10;&#10;Iurii &apos;Ludenus&apos; Kupreev as a developer&#10;&#10;And with free assets:&#10;&#10;Ilay Rubinchik - targets&#10;&#10;Kay Lousberg - all other 3D models&#10;&#10; Leohpaz and JDWasabi for all music and sounds" parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center; height: 34px;" />
+                        <ui:Label tabindex="-1" text="This game has been created by&#10;&#10;Iurii &apos;Ludenus&apos; Kupreev as a developer&#10;&#10;And with free assets:&#10;&#10;Ilay Rubinchik - targets&#10;&#10;Kay Lousberg - all other 3D models&#10;&#10; Leohpaz and JDWasabi for all music and sounds" parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center; height: 34px; font-size: 34px;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
