@@ -110,6 +110,8 @@ public class gameManager_sc : MonoBehaviour
                 Destroy(target);
             }
         }
+
+        character.GetComponent<weaponController_sc>().StopAllWeapon();
         activeTargets.Clear();
         runEnded?.Invoke(this, EventArgs.Empty); // Notify subscribers that the game has ended
         SetGameState(GameState.MainMenu);

@@ -114,14 +114,30 @@ public class magicWand_sc : weapon_sc
 
     public void ReloadFinLogic()
     {
-
-        currentAmmo = magazineSize; // Reload the weapon
-        reloadTimer = 0;
-        isReloading = false; // Reset reloading state
-        wandAnimator.SetTrigger("FinReloading"); // Trigger the reload finish animation
-        isReloading = false; // Reset reloading state
+        if (isReloading)
+        {
+            currentAmmo = magazineSize; // Reload the weapon
+            reloadTimer = 0;
+            isReloading = false; // Reset reloading state
+            wandAnimator.SetTrigger("FinReloading"); // Trigger the reload finish animation
+            
+        }
     }
 
+
+    public override void StopMe()
+    {
+        if(isReloading)
+        {
+            isReloading = false; // Reset reloading state
+            wandAnimator.SetTrigger("FinReloading"); // Trigger the reload finish animation
+        }
+        if(isShooting)
+        {
+            isShooting = false; // Reset shooting state
+            wandAnimator.SetTrigger("FinShoot"); // Trigger the fire finish animation
+        }
+    }
 
 
 

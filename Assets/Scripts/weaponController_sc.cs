@@ -66,27 +66,33 @@ public class weaponController_sc : MonoBehaviour
     // Equips a weapon by index
     public void EquipWeapon(int weaponIndex)
     {
-        if (weaponIndex < 0 || weaponIndex >= weapons.Length || weapons[weaponIndex] == null)
-        {
-            Debug.LogWarning("Invalid weapon index or weapon not assigned.");
-            return;
-        }
 
-        // Deactivate all weapons
-        for (int i = 0; i < weapons.Length; i++)
+        if (currentWeaponIndex != weaponIndex)
         {
-            if (weapons[i] != null)
+
+            if (weaponIndex < 0 || weaponIndex >= weapons.Length || weapons[weaponIndex] == null)
             {
-                weapons[i].gameObject.SetActive(false);
-                
+                Debug.LogWarning("Invalid weapon index or weapon not assigned.");
+                return;
             }
-        }
 
-        // Activate the selected weapon
-        currentWeaponIndex = weaponIndex;
-        weapons[currentWeaponIndex].gameObject.SetActive(true);
-        weapons[currentWeaponIndex].weaponHolder = weaponHolder;
-        Debug.Log($"Equipped weapon: {weapons[currentWeaponIndex].weaponName}");
+            // Deactivate all weapons
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                if (weapons[i] != null)
+                {
+                    weapons[i].StopMe();
+                    weapons[i].gameObject.SetActive(false);
+
+                }
+            }
+
+            // Activate the selected weapon
+            currentWeaponIndex = weaponIndex;
+            weapons[currentWeaponIndex].gameObject.SetActive(true);
+            weapons[currentWeaponIndex].weaponHolder = weaponHolder;
+            Debug.Log($"Equipped weapon: {weapons[currentWeaponIndex].weaponName}");
+        }
     }
 
     // Allows changing the weapon layout via UI
@@ -99,12 +105,32 @@ public class weaponController_sc : MonoBehaviour
         }
         weapon_sc tempWeapon = weapons[slot];
         int tempIndex = 0;
-        while(newWeapon!=weapons[tempIndex])
+        while (newWeapon != weapons[tempIndex])
         {
-            tempIndex++;         
+            tempIndex++;
         }
         weapons[slot] = newWeapon;
         weapons[tempIndex] = tempWeapon;
-        
+        if (currentWeaponIndex == tempIndex)
+        {
+            EquipWeapon(slot); // Update current weapon index if it was the one being swapped
+        }
+        else
+        {
+            EquipWeapon(tempIndex);
+        }
+        ; // Equip the new weapon immediately
+
+    }
+
+    public void StopAllWeapon()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i] != null)
+            {
+                weapons[i].StopMe(); 
+            }
+        }
     }
 }

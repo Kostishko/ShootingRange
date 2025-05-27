@@ -28,7 +28,13 @@ public abstract class weapon_sc : MonoBehaviour
     public AudioClip shootSound; // Sound effect for shooting
     public AudioClip reloadSound; // Sound effect for reloading
 
-
+    public void Start()
+    {
+        // Initialize ammo count
+        currentAmmo = magazineSize; // Start with a full magazine
+        isReloading = false; // Not reloading at the start
+        isShooting = false; // Not shooting at the start
+    }
 
     protected virtual void OnEnable()
     {
@@ -41,7 +47,7 @@ public abstract class weapon_sc : MonoBehaviour
             fireRate = weaponStats.fireRate;
             magazineSize = weaponStats.magazineSize;
             reloadTime = weaponStats.reloadTime; // Reload time for the weapon
-            currentAmmo = magazineSize; // Initialize current ammo to magazine size
+          
             // You can add more fields here if needed      
             reloadTimer = 0;
 
@@ -60,5 +66,7 @@ public abstract class weapon_sc : MonoBehaviour
     // Abstract method for performing the attack
     // This will be implemented differently for projectile and raycast weapons
     protected abstract void PerformAttack();
+
+    public abstract void StopMe();
 
 }

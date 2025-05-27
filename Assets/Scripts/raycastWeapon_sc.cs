@@ -38,4 +38,9 @@ public class raycastWeapon_sc : weapon_sc
         Destroy(effect, 2f); // Destroy the effect after 2 seconds
 
     }
+
+    public override void StopMe()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -20770,6 +20770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 4532372036471812589, guid: d281f355f9334d54484234181b9fe60d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4534600675639060334, guid: d281f355f9334d54484234181b9fe60d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
