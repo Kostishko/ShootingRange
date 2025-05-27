@@ -4947,7 +4947,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5506,8 +5506,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 7.7983093}
-  m_Center: {x: 0, y: 0.00006104476, z: -3.3972018}
+  m_Size: {x: 1, y: 1, z: 33.912167}
+  m_Center: {x: 1.0712527e-15, y: 0.000061034767, z: 4.3482103}
 --- !u!1 &8047864926262832428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,5 +5694,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9999998, y: 1, z: 18.897652}
+  m_Center: {x: -4.8229717e-15, y: 0, z: 8.948825}

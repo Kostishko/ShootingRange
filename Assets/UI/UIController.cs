@@ -16,7 +16,8 @@ public class UIController : MonoBehaviour
     public VisualElement menuRoot;
     public VisualElement MainMenuPanel;
     public Button NewGameButton;
-    public Button RecordsButton;
+    public Button HelpButton;
+    public Button CreatorsButton;
     public Button SettingsButton;
     public Button ExitButton;
 
@@ -24,9 +25,13 @@ public class UIController : MonoBehaviour
     public VisualElement SettingsPanel;
     public Button SettingsBackButton;
 
-    //records menu
-    public VisualElement RecordsPanel;
+    //Help menu
+    public VisualElement HelpPanel;
     public Button RecordsBackButton;
+
+    //Creators menu
+    public VisualElement CreatorsPanel;
+    public Button CreatorsBackButton;
 
     //overlay elements
     public VisualElement overlayRoot;
@@ -57,7 +62,8 @@ public class UIController : MonoBehaviour
         MainMenuPanel = root.Q("MainMenuPanel");
         MainMenuPanel.style.display = DisplayStyle.Flex;
         NewGameButton = root.Q<Button>("NewGameButton");
-        RecordsButton = root.Q<Button>("RecordsButton");
+        HelpButton = root.Q<Button>("HelpButton");
+        CreatorsButton = root.Q<Button>("CreatorsButton");
         SettingsButton = root.Q<Button>("SettingsButton");
         ExitButton = root.Q<Button>("ExitButton");
         MainMenuPanel.RemoveFromClassList("hiddenLeft");
@@ -72,12 +78,21 @@ public class UIController : MonoBehaviour
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         };
 
-        RecordsButton.clicked += () =>
+        HelpButton.clicked += () =>
         {
             MainMenuPanel.AddToClassList("hiddenLeft");
             //MainMenuPanel.RemoveFromClassList("shownPanel");
-            RecordsPanel.RemoveFromClassList("hiddenRight");
+            HelpPanel.RemoveFromClassList("hiddenRight");
             //RecordsPanel.AddToClassList("shownPanel");
+
+        };
+
+        CreatorsButton.clicked += () =>
+        {
+            MainMenuPanel.AddToClassList("hiddenLeft");
+            //MainMenuPanel.RemoveFromClassList("shownPanel");
+           CreatorsPanel.RemoveFromClassList("hiddenRight");
+            //CreatorsPanel.AddToClassList("shownPanel");
 
         };
 
@@ -105,12 +120,22 @@ public class UIController : MonoBehaviour
             //MainMenuPanel.AddToClassList("shownPanel");
         };
 
-        RecordsPanel = root.Q("Records");
+        HelpPanel = root.Q("HelpPanel");
         RecordsBackButton = root.Q<Button>("RecordsBackButton");
         RecordsBackButton.clicked += () =>
         {
-            RecordsPanel.AddToClassList("hiddenRight");
+            HelpPanel.AddToClassList("hiddenRight");
             //RecordsPanel.RemoveFromClassList("shownPanel");
+            MainMenuPanel.RemoveFromClassList("hiddenLeft");
+            //MainMenuPanel.AddToClassList("shownPanel");
+        };
+
+        CreatorsPanel = root.Q("CreatorsPanel");
+        CreatorsBackButton = root.Q<Button>("CreatorsBackButton");
+        CreatorsBackButton.clicked += () =>
+        {
+            CreatorsPanel.AddToClassList("hiddenRight");
+            //CreatorsPanel.RemoveFromClassList("shownPanel");
             MainMenuPanel.RemoveFromClassList("hiddenLeft");
             //MainMenuPanel.AddToClassList("shownPanel");
         };

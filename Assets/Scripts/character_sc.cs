@@ -13,11 +13,14 @@ public class character_sc : MonoBehaviour
 
     public Transform cameraTransform; // Assign the camera in the Inspector
 
+    private Vector3 startPos;
+
     void Start()
     {
-        characterController = GetComponent<CharacterController>();        
+        characterController = GetComponent<CharacterController>();
+        startPos = transform.position; // Store the starting position of the character
 
-       
+
     }
 
     void Update()
@@ -47,7 +50,17 @@ public class character_sc : MonoBehaviour
 
          
         }
+
+        if(transform.position.y > startPos.y + 0.0001)
+        {
+            ResetMyPos();
+        }
         
+    }
+
+    public void ResetMyPos()
+    {
+        transform.position = startPos; // Reset character position to the starting position
     }
 
 

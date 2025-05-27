@@ -35,6 +35,12 @@ public class RockDamageCollision_sc : MonoBehaviour
 
 
         }
+
+        if( collision.gameObject.GetComponent<character_sc>() !=  null)
+        {
+            collision.gameObject.GetComponent<character_sc>().ResetMyPos(); // Reset character position on hit
+        }
+
         // Destroy the projectile after hitting something
         if (!isHitted)
         {

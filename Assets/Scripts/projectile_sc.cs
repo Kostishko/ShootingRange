@@ -13,7 +13,7 @@ public class projectile_sc : MonoBehaviour
     private void Start()
     {
         // Destroy the projectile after its lifetime expires
-        Destroy(gameObject, lifetime);
+        Destroy(gameObject.transform.parent, lifetime);
     }
 
     private void Update()
@@ -46,8 +46,8 @@ public class projectile_sc : MonoBehaviour
 
 
         }
-        // Destroy the projectile after hitting something
-        Destroy(gameObject, 1f);
+        //// Destroy the projectile after hitting something
+        //Destroy(gameObject, 1f);
     }
 
    
