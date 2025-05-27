@@ -17,5 +17,5 @@ MonoBehaviour:
   description: Call a meteor to the target
   damage: 100
   fireRate: 3
-  magazineSize: 3
+  magazineSize: 4
   reloadTime: 2

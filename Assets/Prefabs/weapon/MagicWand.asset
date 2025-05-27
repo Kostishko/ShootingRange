@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponIcon: {fileID: 21300000, guid: c35681138b9ef524382206f3143b8b06, type: 3}
   weaponName: Magic Wand
   description: Short range, fast reload
-  damage: 10
+  damage: 25
   fireRate: 4
-  magazineSize: 6
+  magazineSize: 12
   reloadTime: 1

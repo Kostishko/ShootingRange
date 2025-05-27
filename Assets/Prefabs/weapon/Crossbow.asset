@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponIcon: {fileID: 21300000, guid: ba67030392319fd46b2724796535f3a2, type: 3}
   weaponName: Crossbow
   description: Very high damage
-  damage: 100
+  damage: 60
   fireRate: 1
   magazineSize: 1
   reloadTime: 3
