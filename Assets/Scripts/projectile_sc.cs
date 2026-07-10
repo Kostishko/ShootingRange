@@ -47,7 +47,7 @@ public class projectile_sc : MonoBehaviour
 
         }
         //// Destroy the projectile after hitting something
-        //Destroy(gameObject, 1f);
+        Destroy(gameObject, 1f);
     }
 
    
