@@ -70,7 +70,7 @@ public class weaponChestUIController_sc : MonoBehaviour
 
             localWeaponCard.WeaponCard.RegisterCallback<ClickEvent>(e =>
             {
-                if (e.propagationPhase == PropagationPhase.AtTarget || e.propagationPhase == PropagationPhase.BubbleUp)
+                if (e.propagationPhase == PropagationPhase.TrickleDown || e.propagationPhase == PropagationPhase.BubbleUp)
                 {
                     if (currentWeaponCard != null && currentWeaponCard != localWeaponCard)
                     {
