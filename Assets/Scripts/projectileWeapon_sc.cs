@@ -42,6 +42,7 @@ public class projectileWeapon_sc : weapon_sc
             wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
             SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
             isReloading = true; // Set reloading state
+            reloadTimer = reloadTime;
         }
 
     }
@@ -53,6 +54,7 @@ public class projectileWeapon_sc : weapon_sc
         if(gameManager_sc.currentGameState == gameManager_sc.GameState.Gameplay || gameManager_sc.currentGameState == gameManager_sc.GameState.Waiting)
         {
             HandleAttack();
+            ReloadLogic();
         }
 
         // Handle reload input
@@ -62,6 +64,8 @@ public class projectileWeapon_sc : weapon_sc
             wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
             SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
             isReloading = true; // Set reloading state
+
+            
         }
 
     }
@@ -70,20 +74,27 @@ public class projectileWeapon_sc : weapon_sc
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            Debug.Log("You pressed Fire while handle the projectile weapon");
 
             if (!isReloading && !isShooting)
             {
+                Debug.Log("The projectile weapon is not reloading or shooting currently");
                 if (currentAmmo <= 0)
                 {
                     wandAnimator.SetTrigger("Reload"); // Trigger the reload animation
                     SoundFXManager_sc.instance.PlaySoundFXClip(reloadSound, this.transform, 1f); // Play the reload sound
                     isReloading = true; // Set reloading state
+                    reloadTimer = reloadTime;
+                    Debug.Log("Current ammo was smaller than zero, so it went to reload");
                 }
                 else
                 {
+                    Debug.Log("There were ammo, so should be a shot");
+
 
                     if (Time.time >= nextFireTime)
                     {
+                        Debug.Log("And even the time for fire time is good enough to make the shot");
                         nextFireTime = Time.time + 1f / fireRate;
                         wandAnimator.SetTrigger("Shoot"); // Trigger the fire animation
                         isShooting = true; // Set shooting state
@@ -95,6 +106,26 @@ public class projectileWeapon_sc : weapon_sc
 
     }
 
+ public void ReloadLogic()
+    {
+        
+        if (isReloading)
+        {
+            if(reloadTime>0)
+            {
+                reloadTimer -= Time.deltaTime;
+            }
+            else
+            {
+                currentAmmo = magazineSize; // Reload the weapon
+                reloadTimer = 0;
+                wandAnimator.SetTrigger("FinReload"); // Trigger the reload finish animation
+
+                isReloading = false; // Ensure reloading state is reset after reload completes
+            }
+        }
+    }
+
     public void ReloadFinLogic()
     {
         if (isReloading)
@@ -102,7 +133,7 @@ public class projectileWeapon_sc : weapon_sc
             currentAmmo = magazineSize; // Reload the weapon
             reloadTimer = 0;
             wandAnimator.SetTrigger("FinReload"); // Trigger the reload finish animation
-            
+            isReloading = false;
         }
     }
 
