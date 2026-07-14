@@ -1,110 +1,107 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Resources/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet" />
+    <Style src="project://database/Assets/UI/Resources/UI/GameStyleSheet.uss?fileID=7433441132597879392&amp;guid=e4d70a7f8d4242d4888c52800e3b77e5&amp;type=3#GameStyleSheet"/>
     <ui:VisualElement name="PromtBox" style="flex-grow: 1; position: absolute; flex-basis: auto; width: 25%; height: 10%; flex-direction: row; display: flex; visibility: hidden; top: 26px; left: 20px;">
         <ui:VisualElement name="PromtPicture" style="flex-grow: 0; flex-shrink: 0; flex-basis: 25%; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;); flex-direction: column; -unity-text-align: upper-left; align-items: center; justify-content: center;">
-            <ui:Label tabindex="-1" text="E" parse-escape-sequences="true" display-tooltip-when-elided="true" style="left: 3px; font-size: 40px;" />
+            <ui:Label tabindex="-1" text="E" parse-escape-sequences="true" display-tooltip-when-elided="true" style="left: 3px; font-size: 40px;"/>
         </ui:VisualElement>
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PromtLabel" style="-unity-text-align: middle-left; font-size: 49px;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PromtLabel" style="-unity-text-align: middle-left; font-size: 49px;"/>
     </ui:VisualElement>
     <ui:VisualElement name="GameplayOverlay" style="flex-grow: 1; display: flex; position: absolute; width: 100%; height: 100%;">
         <ui:VisualElement name="RoundOnLayoutPanel" style="flex-grow: 1; align-items: center; visibility: visible; display: flex;">
-            <ui:Label tabindex="-1" text="00:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Timer" class="timerLabel" style="left: 0; top: 10%; visibility: visible;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Score" class="timerLabel" style="translate: 800px 0;" />
+            <ui:Label tabindex="-1" text="00:00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Timer" class="timerLabel" style="left: 0; top: 10%; visibility: visible;"/>
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Score" class="timerLabel" style="translate: 800px 0;"/>
         </ui:VisualElement>
         <ui:VisualElement name="ConstantLayoutPanel" style="flex-grow: 1; flex-direction: row;">
-            <ui:VisualElement name="LeftConstantPanel" style="flex-grow: 0; width: 50%;">
-                <ui:VisualElement name="WeaponLayoutPanel" style="flex-grow: 0; width: 75%; height: 40%; top: 60%; flex-direction: row;">
-                    <ui:VisualElement name="Weapon1_Panel" class="weaponOverlayPanel" style="flex-grow: 1;" />
-                    <ui:VisualElement name="Weapon2_Panel" class="weaponOverlayPanel" style="flex-grow: 1;" />
-                </ui:VisualElement>
-            </ui:VisualElement>
+            <ui:VisualElement name="LeftConstantPanel" style="flex-grow: 0; width: 50%;"/>
             <ui:VisualElement name="RightConstantPanel" style="flex-grow: 0; width: 50%; flex-direction: row-reverse; align-items: auto;">
                 <ui:VisualElement name="WeaponLayoutPanel" style="flex-grow: 0; width: 35%; height: 40%; top: 0; flex-direction: row-reverse;">
                     <ui:VisualElement name="Weapon2_Panel" class="weaponOverlayPanel" style="flex-grow: 1; margin-right: 0; -unity-text-align: upper-left; justify-content: center; align-items: center;">
-                        <ui:Label tabindex="-1" text="00/00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponAmmo" class="timerLabel" style="-unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="00/00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WeaponAmmo" class="timerLabel" style="-unity-text-align: upper-right;"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; position: absolute; width: 100%; height: 100%; justify-content: center; align-items: center;">
-            <ui:VisualElement name="Aim" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;); height: 40px; width: 40px;" />
+            <ui:VisualElement name="Aim" style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Textures/PromtMark.png?fileID=2800000&amp;guid=baf0fa1acb2726346bdcec210ea70e47&amp;type=3#PromtMark&quot;); height: 40px; width: 40px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Canvas" style="flex-grow: 1; padding-top: 5%; padding-right: 15%; padding-left: 15%; padding-bottom: 5%; flex-direction: column; align-items: center;">
         <ui:VisualElement name="MainMenuPanel" class="menuPanel hiddenLeft" style="position: absolute; transition-delay: 0s;">
-            <ui:Button text="On the Range!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGameButton" class="menuButton" />
-            <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="menuButton" />
-            <ui:Button text="Help" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HelpButton" class="menuButton" />
-            <ui:Button text="Creators" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreatorsButton" class="menuButton" />
-            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="menuButton" />
+            <ui:Button text="On the Range!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGameButton" class="menuButton"/>
+            <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="menuButton"/>
+            <ui:Button text="Help" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HelpButton" class="menuButton"/>
+            <ui:Button text="Creators" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreatorsButton" class="menuButton"/>
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="menuButton"/>
         </ui:VisualElement>
         <ui:VisualElement name="Setting" class="menuPanel hiddenTop" style="position: absolute; transition-delay: 0s;">
-            <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" style="top: -47px; left: 591px;" />
-            <ui:Slider label="Master" high-value="1" name="MasterSlider" low-value="0.0001" class="MenuSlider" />
-            <ui:Slider label="Sound" high-value="1" name="SoundSlider" low-value="0.0001" class="MenuSlider" />
-            <ui:Slider label="Music" high-value="1" name="MusicSlider" low-value="0.0001" class="MenuSlider" />
-            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBackButton" class="menuButton" style="margin-bottom: 0; margin-top: 120px;" />
+            <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" style="top: -47px; left: 270px;"/>
+            <ui:Slider label="Master" high-value="1" name="MasterSlider" low-value="0.0001" class="MenuSlider"/>
+            <ui:Slider label="Sound" high-value="1" name="SoundSlider" low-value="0.0001" class="MenuSlider"/>
+            <ui:Slider label="Music" high-value="1" name="MusicSlider" low-value="0.0001" class="MenuSlider"/>
+            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBackButton" class="menuButton" style="margin-bottom: 0; margin-top: 120px;"/>
         </ui:VisualElement>
         <ui:VisualElement name="HelpPanel" class="menuPanel hiddenRight" style="position: absolute; transition-delay: 0s;">
             <ui:VisualElement style="flex-grow: 0; height: 15%;">
-                <ui:Label tabindex="-1" text="Help" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" style="position: relative;" />
+                <ui:Label tabindex="-1" text="Help" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" style="position: relative;"/>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-                <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: center; width: 33%; padding-top: 18px; padding-right: 18px; padding-bottom: 18px; padding-left: 18px;">
-                    <ui:VisualElement style="flex-grow: 0; height: 25%; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; align-items: center; margin-right: 0; width: auto;">
-                        <ui:Label tabindex="-1" text="There is a chest with weapon behind you&#10;come to it and press &quot;E&quot;&#10;And you can change the weapon layout" parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center;" />
+                <ui:ScrollView mode="Horizontal" horizontal-scroller-visibility="AlwaysVisible" focusable="false" vertical-scroller-visibility="Hidden" scroll-deceleration-rate="29.8" horizontal-page-size="75" enabled="true" touch-scroll-type="Clamped" style="flex-direction: row; width: 701px;">
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 60%; align-items: center; justify-content: flex-start; flex-direction: row; height: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-shrink: 0; margin-right: 10px;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 25%; margin-right: 0; width: 40%; -unity-text-align: upper-left; flex-direction: column; justify-content: flex-start; align-items: flex-start; align-self: auto; align-content: center; flex-wrap: wrap;">
+                            <ui:Label tabindex="-1" text="There is a chest with weapon behind you&#10;come to it and press &quot;E&quot;&#10;And you can change the weapon layout" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="recordLabel" style="-unity-text-align: middle-left; height: auto; font-size: 15px; white-space: pre-wrap; flex-grow: 1; flex-shrink: 1; flex-wrap: wrap; width: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; height: 75%; background-image: url(&quot;project://database/Assets/Sprites/WeaponChestPicture.PNG?fileID=21300000&amp;guid=0e53b6e579036b84690fa4bcdf37a408&amp;type=3#WeaponChestPicture&quot;); border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(163, 157, 90); border-right-color: rgb(163, 157, 90); border-top-color: rgb(163, 157, 90); border-bottom-color: rgb(163, 157, 90); width: 50%;"/>
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Sprites/WeaponChestPicture.PNG?fileID=21300000&amp;guid=0e53b6e579036b84690fa4bcdf37a408&amp;type=3#WeaponChestPicture&quot;); border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(163, 157, 90); border-right-color: rgb(163, 157, 90); border-top-color: rgb(163, 157, 90); border-bottom-color: rgb(163, 157, 90); width: 100%; height: 45%;" />
-                </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; width: 33%; align-items: center; justify-content: flex-start; flex-direction: column; height: auto; padding-top: 18px; padding-right: 18px; padding-bottom: 18px; padding-left: 18px;">
-                    <ui:VisualElement style="flex-grow: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; height: 25%;">
-                        <ui:Label tabindex="-1" text="To start the game you can approach the torch&#10;and you guess what? Press &quot;E&quot; again!&#10;You can&apos;t change your weapon during the run." parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center; height: 34px;" />
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 60%; align-items: center; justify-content: flex-start; flex-direction: row; height: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-shrink: 0; margin-right: 10px;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 25%; margin-right: 0; width: 40%; -unity-text-align: upper-left; flex-direction: column; justify-content: flex-start; align-items: flex-start; align-self: auto; align-content: center; flex-wrap: wrap;">
+                            <ui:Label tabindex="-1" text="To start the game you can approach the torch&#10;and you guess what? Press &quot;E&quot; again!&#10;You can&apos;t change your weapon during the run." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="recordLabel" style="-unity-text-align: middle-left; height: auto; font-size: 15px; white-space: pre-wrap; flex-grow: 1; flex-shrink: 1; flex-wrap: wrap; width: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; height: 75%; background-image: url(&quot;project://database/Assets/Sprites/StartGamePic.PNG?fileID=21300000&amp;guid=2000e3bc0f25491489bec420cca5da6b&amp;type=3#StartGamePic&quot;); border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(163, 157, 90); border-right-color: rgb(163, 157, 90); border-top-color: rgb(163, 157, 90); border-bottom-color: rgb(163, 157, 90); width: 50%;"/>
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; height: 45%; background-image: url(&quot;project://database/Assets/Sprites/StartGamePic.PNG?fileID=21300000&amp;guid=2000e3bc0f25491489bec420cca5da6b&amp;type=3#StartGamePic&quot;); border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(163, 157, 90); border-right-color: rgb(163, 157, 90); border-top-color: rgb(163, 157, 90); border-bottom-color: rgb(163, 157, 90); width: 100%;" />
-                </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; width: 33%; flex-direction: column; align-items: center; height: auto; padding-top: 18px; padding-right: 18px; padding-bottom: 18px; padding-left: 18px; justify-content: flex-start;">
-                    <ui:VisualElement style="flex-grow: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; height: 25%;">
-                        <ui:Label tabindex="-1" text="Destroy as many targets as you can!&#10;Every target gives you 10 scores." parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center;" />
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 60%; align-items: center; justify-content: flex-start; flex-direction: row; height: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-shrink: 0;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; height: 25%; margin-right: 0; width: 40%; -unity-text-align: upper-left; flex-direction: column; justify-content: flex-start; align-items: flex-start; align-self: auto; align-content: center; flex-wrap: wrap;">
+                            <ui:Label tabindex="-1" text="Destroy as many targets as you can!&#10;Every target gives you 10 scores." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="recordLabel" style="-unity-text-align: middle-left; height: auto; font-size: 15px; white-space: pre-wrap; flex-grow: 1; flex-shrink: 1; flex-wrap: wrap; width: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; height: 75%; background-image: url(&quot;project://database/Assets/Sprites/Gameplay.PNG?fileID=21300000&amp;guid=1f9e75790c43d18438d2efa413f2e688&amp;type=3#Gameplay&quot;); border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(163, 157, 90); border-right-color: rgb(163, 157, 90); border-top-color: rgb(163, 157, 90); border-bottom-color: rgb(163, 157, 90); width: 50%;"/>
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; height: 45%; background-image: url(&quot;project://database/Assets/Sprites/Gameplay.PNG?fileID=21300000&amp;guid=1f9e75790c43d18438d2efa413f2e688&amp;type=3#Gameplay&quot;); border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(163, 157, 90); border-right-color: rgb(163, 157, 90); border-top-color: rgb(163, 157, 90); border-bottom-color: rgb(163, 157, 90); width: 100%;" />
-                </ui:VisualElement>
+                </ui:ScrollView>
             </ui:VisualElement>
-            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsBackButton" class="menuButton" />
+            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RecordsBackButton" class="menuButton"/>
         </ui:VisualElement>
         <ui:VisualElement name="CreatorsPanel" class="menuPanel hiddenRight" style="position: absolute; transition-delay: 0s;">
             <ui:VisualElement style="flex-grow: 0; height: 15%;">
-                <ui:Label tabindex="-1" text="Help" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" style="position: relative;" />
+                <ui:Label tabindex="-1" text="Creators" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="menuTitleLabel titleLabel" style="position: relative;"/>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
                 <ui:VisualElement style="flex-grow: 1; width: 33%; align-items: center; justify-content: flex-start; flex-direction: column; height: auto; padding-top: 18px; padding-right: 18px; padding-bottom: 18px; padding-left: 18px;">
                     <ui:VisualElement style="flex-grow: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; height: 25%;">
-                        <ui:Label tabindex="-1" text="This game has been created by&#10;&#10;Iurii &apos;Ludenus&apos; Kupreev as a developer&#10;&#10;And with free assets:&#10;&#10;Ilay Rubinchik - targets&#10;&#10;Kay Lousberg - all other 3D models&#10;&#10; Leohpaz and JDWasabi for all music and sounds" parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center; height: 34px; font-size: 34px;" />
+                        <ui:Label tabindex="-1" text="This game has been created by&#10;&#10;Iurii &apos;Ludenus&apos; Kupreev as a developer&#10;&#10;And with free assets:&#10;&#10;Ilay Rubinchik - targets&#10;&#10;Kay Lousberg - all other 3D models&#10;&#10; Leohpaz and JDWasabi for all music and sounds" parse-escape-sequences="true" display-tooltip-when-elided="true" class="recordLabel" style="-unity-text-align: upper-center; height: 34px; font-size: 15px;"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreatorsBackButton" class="menuButton" />
+            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreatorsBackButton" class="menuButton"/>
         </ui:VisualElement>
         <ui:VisualElement name="Inventory" class="menuPanel hiddenLeft" style="flex-grow: 1; position: absolute; flex-direction: column; align-items: stretch; display: flex;">
             <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
                 <ui:VisualElement name="PlayerLayout" style="flex-grow: 1; align-items: center; margin-bottom: 0;">
-                    <ui:Label tabindex="-1" text="Pockets" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
+                    <ui:Label tabindex="-1" text="Pockets" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;"/>
                 </ui:VisualElement>
                 <ui:VisualElement name="InTheChest" style="flex-grow: 1; align-items: center; margin-bottom: 0; flex-shrink: 0;">
-                    <ui:Label tabindex="-1" text="Chest" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;" />
+                    <ui:Label tabindex="-1" text="Chest" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel" style="position: relative;"/>
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 0; align-items: center; justify-content: center; flex-shrink: 1; margin-bottom: 34px;">
-                <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" name="InventoryExit" class="menuButton" style="width: auto; height: 105px; margin-bottom: 0; margin-top: 0;" />
+                <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" name="InventoryExit" class="menuButton" style="width: auto; height: 105px; margin-bottom: 0; margin-top: 0;"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="RunEnd" class="menuPanel hiddenLeft" style="position: absolute; transition-delay: 0.2s;">
-            <ui:Label tabindex="-1" text="Congrats!" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel" />
-            <ui:Label tabindex="-1" text="0000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ScoreAtCongrats" class="timerLabel" style="margin-top: 16%; flex-grow: 1; flex-shrink: 1;" />
-            <ui:Button text="Done" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RunEndButton" class="menuButton" style="margin-bottom: 0; margin-top: 70px;" />
+            <ui:Label tabindex="-1" text="Congrats!" parse-escape-sequences="true" display-tooltip-when-elided="true" class="menuTitleLabel titleLabel"/>
+            <ui:Label tabindex="-1" text="0000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ScoreAtCongrats" class="timerLabel" style="margin-top: 16%; flex-grow: 1; flex-shrink: 1;"/>
+            <ui:Button text="Done" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RunEndButton" class="menuButton" style="margin-bottom: 0; margin-top: 70px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="TargetInfo" style="flex-grow: 1; position: absolute;">
-        <ui:ProgressBar value="29.9" title="Health" name="HealthBar" class="unity-progress-bar healthBar" style="height: 42px; width: 338px; font-size: 23px; position: absolute; visibility: hidden;" />
-        <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DamageInfo" style="font-size: 55px; -unity-font-style: bold; color: rgb(250, 0, 0); -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(255, 255, 255); visibility: hidden;" />
+        <ui:ProgressBar value="29.9" title="Health" name="HealthBar" class="unity-progress-bar healthBar" style="height: 42px; width: 338px; font-size: 23px; position: absolute; visibility: hidden;"/>
+        <ui:Label tabindex="-1" text="100" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DamageInfo" style="font-size: 55px; -unity-font-style: bold; color: rgb(250, 0, 0); -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(255, 255, 255); visibility: hidden;"/>
     </ui:VisualElement>
 </ui:UXML>
